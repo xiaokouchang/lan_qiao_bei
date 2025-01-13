@@ -539,44 +539,158 @@
 //}
 
 
-#include<stdio.h>
-void sort(int* arr, int sz)
-{
-	int i = 0;
-	int j = 0;
-	for (i = 0;i < sz - 1;i++)
-	{
-		for (j = 0;j < sz - 1 - i;j++)
-		{
-			if (arr[j] < arr[j + 1])
-			{
-				int temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
-	}
-}
-int caluate(int* arr,int sz)
-{
-	int arr1[3] = { 0 };
-	sort(arr,sz);
-	int MAX = arr[0];
-	int MIN = arr[sz - 1];
+//输入正整数a,b,c,输出a/b的小数形式,精确到小数点后c位。
+//a,b≤10^6,c≤100。
+//输入包含多组数据,结束标记为a＝b＝c＝0。
+//样例输入:
+//1 6 4
+//0 0 0
+//样例输出:
+//Case 1: 0.1667
+//#include<stdio.h>
+//int main()
+//{
+//	double num1 = 0;
+//	double num2 = 0;
+//	int num3 = 0;
+//	int n = 1;
+//	double sum = 0;
+//	while (scanf("%lf %lf %d", &num1, &num2, &num3) == 3)
+//	{
+//		sum = num1 / num2;
+//		printf("Case %d : %.*f\n", n, num3, sum);
+//		n++;
+//	}
+//	return 0;
+//}
 
-}
-int main()
-{
-	int arr[100] = { 0 };
-	int count = 0;
-	int i = 0;
-	while (scanf("%d", &arr[i]) != EOF)
-	{
-		i++;
-	}
-	caluate(arr,i);
-	return 0;
-}
+
+//用1,2,3,…,9组成3个三位数abc,def和ghi,每个数字恰好使用一次
+//要求abc:def:ghi＝1:2:3。
+//按照"abc def ghi"的格式输出所有解, 每行一个解。
+//提示:不必太动脑筋。
+//192 384 576
+//219 438 657
+//273 546 819
+//327 654 981
+//第一种方法
+//#include<stdio.h>
+////判断9个数是否有0
+//int bi1(int num1, int num2, int num3)
+//{
+//	int arr[9] = { 0 };
+//	int i = 0;
+//	arr[0] = num1 / 100;
+//	arr[1] = num1 / 10 % 10;
+//	arr[2] = num1 % 10;
+//	arr[3] = num2 / 100;
+//	arr[4] = num2 / 10 % 10;
+//	arr[5] = num2 % 10;
+//	arr[6] = num3 / 100;
+//	arr[7] = num3 / 10 % 10;
+//	arr[8] = num3 % 10;
+//	for (i = 0;i < 9;i++)
+//	{
+//		if (arr[i] == 0)
+//		{
+//			return 1;
+//		}
+//	}
+//	return 0;
+//}
+////判断9个数是否相等
+//int bi2(int i, int j, int k)
+//{
+//	int m = 0;
+//	int num1 = 0;
+//	int count = 0;
+//	int arr[9] = { 0 };
+//	arr[0] = i / 100;
+//	arr[1] = i / 10 % 10;
+//	arr[2] = i % 10;
+//	arr[3] = j / 100;
+//	arr[4] = j / 10 % 10;
+//	arr[5] = j % 10;
+//	arr[6] = k / 100;
+//	arr[7] = k / 10 % 10;
+//	arr[8] = k % 10;
+//	int use[10] = { 0 };//arr[m]最小为1,+9为10
+//	for (m = 0;m < 9;m++)
+//	{
+//		if (use[arr[m]] == 0)
+//		{
+//			use[arr[m]] = 1;
+//		}
+//		else
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int num2 = 0;
+//	int num3 = 0;
+//	int i = 0;
+//	int j = 0;
+//	int k = 0;
+//	for (i = 123;i <= 333;i++)
+//	{
+//		j = 2 * i;
+//		k = 3 * i;
+//		int ret1 = bi1(i, j, k);
+//		if (ret1 == 1)
+//		{
+//			continue;
+//		}
+//		int ret2 = bi2(i, j, k);
+//		if (ret2 == 1)
+//		{
+//			printf("%d %d %d\n", i, j, k);
+//		}
+//	}
+//	return 0;
+//}
+
+
+//第二种方法
+//#include <stdio.h>
+//// 交换函数，用于交换数组元素
+//void swap(int* a, int* b) 
+//{
+//    int temp = *a;
+//    *a = *b;
+//    *b = temp;
+//}
+//
+//// 生成全排列的函数
+//void permute(int* arr, int start, int end) 
+//{
+//    if (start == end) 
+//    {
+//        int abc = arr[0] * 100 + arr[1] * 10 + arr[2];
+//        int def = arr[3] * 100 + arr[4] * 10 + arr[5];
+//        int ghi = arr[6] * 100 + arr[7] * 10 + arr[8];
+//        if (def == 2 * abc && ghi == 3 * abc) 
+//        {
+//            printf("%d %d %d\n", abc, def, ghi);
+//        }
+//        return;
+//    }
+//    for (int i = start; i <= end; i++) 
+//    {
+//        swap(&arr[start], &arr[i]);
+//        permute(arr, start + 1, end);
+//        swap(&arr[start], &arr[i]);
+//    }
+//}
+//
+//int main() {
+//    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+//    permute(arr, 0, 8);
+//    return 0;
+//}
 
 
 //#include<stdio.h>
