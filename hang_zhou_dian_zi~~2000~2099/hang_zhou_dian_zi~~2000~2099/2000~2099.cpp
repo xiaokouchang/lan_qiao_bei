@@ -379,10 +379,165 @@
 //}
 
 
-//第2003题
-//第2003题
-//第2003题
-//第2003题
+//第2007题
+//Problem Description
+//给定一段连续的整数,求出他们中所有偶数的平方和以及所有奇数的立方和。
+//Input
+//输入数据包含多组测试实例,每组测试实例包含一行,由两个整数m和n组成。
+//Output
+//对于每组输入数据,输出一行,应包括两个整数x和y
+//分别表示该段连续的整数中所有偶数的平方和以及所有奇数的立方和。
+//你可以认为32位整数足以保存结果。
+//Sample Input
+//1 3
+//2 5
+//Sample Output
+//4 28
+//20 152
+//#include<stdio.h>
+//#include<math.h>
+//void cheng(int* arr,int num,int sum1,int sum2)
+//{
+//	if (num % 2 == 0)
+//	{
+//		arr[0] = arr[0] + pow(num, 2);
+//	}
+//	else
+//	{
+//		arr[1] = pow(num, 3) + arr[1];
+//	}
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	int i = 0;
+//	while (scanf("%d %d", &num1, &num2) == 2)
+//	{
+//		int sum1 = 0;
+//		int sum2 = 0;
+//		int arr[2] = { 0 };
+//		for (i = num1; i <= num2; i++)
+//		{
+//			cheng(arr,i,sum1,sum2);
+//		}
+//		for (i = 0;i < 2;i++)
+//		{
+//			printf("%d ", arr[i]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+//第2008题
+//Problem Description
+//统计给定的n个数中,负数、零和正数的个数。
+//Input
+//输入数据有多组,每组占一行,每行的第一个数是整数n(n<100)
+//表示需要统计的数值的个数,然后是n个实数
+//如果n=0,则表示输入结束,该行不做处理。
+//Output
+//对于每组输入数据,输出一行a,b和c
+//分别表示给定的数据中负数、零和正数的个数。
+//Sample Input
+//6 0 1 2 3 - 1 0
+//5 1 2 3 4 0.5
+//0
+//Sample Output
+//1 2 3
+//0 0 5
+//#include<stdio.h>
+//void shu(int* arr,int count)
+//{
+//	int i = 0;
+//	int ling = 0;
+//	int zheng = 0;
+//	int fu = 0;
+//	for (i = 1;i < count;i++)
+//	{
+//		if (arr[i] > 0)
+//		{
+//			zheng++;
+//		}
+//		else if (arr[i] == 0)
+//		{
+//			ling++;
+//		}
+//		else
+//		{
+//			fu++;
+//		}
+//	}
+//	printf("%d %d %d\n", fu, ling, zheng);
+//}
+//int main()
+//{
+//	int num = 0;
+//	int count = 0;
+//	int i = 0;
+//	char c = 0;
+//	int arr[1000] = { 0 };
+//	while (scanf("%d%c", &num, &c) == 2)
+//	{
+//		arr[count++] = num;
+//		if (c == '\n')
+//		{
+//			shu(arr, count);
+//			count = 0;
+//			continue;
+//		}
+//	}
+//	return 0;
+//}
+
+
+//第2009题
+//Problem Description
+//数列的定义如下:
+//数列的第一项为n,以后各项为前一项的平方根,求数列的前m项的和。
+//Input
+//输入数据有多组,每组占一行,由两个整数n(n<10000)和m(m<1000)组成
+//n和m的含义如前所述。
+//Output
+//对于每组输入数据,输出该数列的和,每个测试实例占一行,要求精度保留2位小数。
+//Sample Input
+//81 4
+//2 2
+//Sample Output
+//94.73
+//3.41
+//#include<stdio.h>
+//#include<math.h>
+//void SUM(int num1, int num2)
+//{
+//	int i = 0;
+//	double sum = 0;
+//	double temp = num1;
+//	for (i = 1; i <= num2;i++)
+//	{
+//		num1 = temp;
+//		sum = sum + temp;
+//		temp = pow(num1, 0.5);
+//	}
+//	printf("%.2f\n", sum);
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	while (scanf("%d %d", &num1, &num2) == 2)
+//	{
+//		SUM(num1, num2);
+//	}
+//	return 0;
+//}
+
+
+//第2010题
+
+//第2011题
 //第2003题
 //第2003题
 //第2003题
