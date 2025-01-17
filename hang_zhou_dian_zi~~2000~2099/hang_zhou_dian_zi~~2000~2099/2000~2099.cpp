@@ -536,11 +536,383 @@
 
 
 //第2010题
+//Problem Description
+//春天是鲜花的季节,水仙花就是其中最迷人的代表,数学上有个水仙花数
+//他是这样定义的:"水仙花数"是指一个三位数,它的各位数字的立方和等于其本身
+//比如:153=1^3+5^3+3^3。
+//现在要求输出所有在m和n范围内的水仙花数。
+//Input
+//输入数据有多组,每组占一行,包括两个整数m和n(100<=m<=n<=999)。
+//Output
+//对于每个测试实例,要求输出所有在给定范围内的水仙花数
+//输出的水仙花数必须大于等于m,并且小于等于n
+//如果有多个,则要求从小到大排列在一行内输出,之间用一个空格隔开
+//如果给定的范围内不存在水仙花数,则输出no;
+//每个测试实例的输出占一行。
+//Sample Input
+//100 120
+//300 380
+//Sample Output
+//no
+//370 371
+//#include<stdio.h>
+//#include<math.h>
+//int water_xian_flower(int num)
+//{
+//	if (num == pow(num / 100, 3) + pow(num / 10 % 10, 3) + pow(num % 10, 3))
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	int i = 0;
+//	int flag = 0;
+//	while (scanf("%d %d", &num1, &num2) == 2)
+//	{
+//		for (i = num1;i <= num2;i++)
+//		{
+//			int ret = water_xian_flower(i);
+//			if (ret == 1)
+//			{
+//				flag = 1;
+//				printf("%d ", i);
+//			}
+//		}
+//		if (flag == 0)
+//		{
+//			printf("no\n");
+//		}
+//		else
+//		{
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+
 
 //第2011题
-//第2003题
-//第2003题
-//第2003题
+//Problem Description
+//多项式的描述如下:
+//1-1/2+1/3-1/4+1/5-1/6+...
+//现在请你求出该多项式的前n项的和。
+//Input
+//输入数据由2行组成,首先是一个正整数m(m<100),表示测试实例的个数
+//第二行包含m个正整数,对于每一个整数(不妨设为n,n<1000)
+//求该多项式的前n项的和。
+//Output
+//对于每个测试实例n,要求输出多项式前n项的和。
+//每个测试实例的输出占一行，结果保留2位小数。
+//Sample Input
+//2
+//1 2
+//Sample Output
+//1.00
+//0.50
+//#include<stdio.h>
+//#include<math.h>
+//void shu_lie(int* arr,int num)
+//{
+//	int i = 0;
+//	double sum = 0;
+//	for (i = 1; i <= num; i++)
+//	{
+//		sum = sum + pow(-1, i + 1) * 1.0 / i;
+//	}
+//	printf("%.2f\n", sum);
+//}
+//int main()
+//{
+//	int arr[1000] = { 0 };
+//	int i = 0;
+//	int num = 0;
+//	scanf("%d", &num);
+//	for (i = 0; i < num; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//		shu_lie(arr, arr[i]);
+//	}
+//	return 0;
+//}
+
+
+//第2012题
+//对于表达式n^2+n+41,当n在(x,y)范围内取整数值时
+//(包括x,y)(-39<=x<y<=50),判定该表达式的值是否都为素数。
+//Input
+//输入数据有多组,每组占一行,由两个整数x,y组成
+//当x=0,y=0时,表示输入结束,该行不做处理。
+//Output
+//对于每个给定范围内的取值,如果表达式的值都为素数,则输出"OK"
+//否则请输出"Sorry",每组输出占一行。
+//Sample Input
+//0 1
+//0 0
+//Sample Output
+//OK
+//#include <stdio.h>
+//#include <math.h>
+//// 判断一个数是否为素数
+//int isPrime(int num)
+//{
+//    if (num <= 1)
+//    {
+//        return 0;
+//    }
+//    if (num <= 3) 
+//    {
+//        return 1;
+//    }
+//    if (num % 2 == 0 || num % 3 == 0)
+//    {
+//        return 0;
+//    }
+//    // 只需要检查到sqrt(num)即可
+//    for (int i = 5; i * i <= num; i += 6) 
+//    {
+//        if (num % i == 0 || num % (i + 2) == 0) 
+//        {
+//            return 0;
+//        }
+//    }
+//    return 1;
+//}
+//int main() 
+//{
+//    int x, y;
+//    while (1) 
+//    {
+//        // 输入x和y
+//        scanf("%d %d", &x, &y);
+//        if (x == 0 && y == 0) {
+//            break;
+//        }
+//        int flag = 1;
+//        for (int n = x; n <= y; n++) 
+//        {
+//            int value = n * n + n + 41;
+//            // 如果有一个值不是素数，将flag设为0并跳出循环
+//            if (!isPrime(value)) 
+//            {
+//                flag = 0;
+//                break;
+//            }
+//        }
+//        // 根据flag的值输出结果
+//        if (flag) 
+//        {
+//            printf("OK\n");
+//        }
+//        else 
+//        {
+//            printf("Sorry\n");
+//        }
+//    }
+//    return 0;
+//}
+
+
+//第2013题
+//Problem Description
+//喜欢西游记的同学肯定都知道悟空偷吃蟠桃的故事
+//你们一定都觉得这猴子太闹腾了,其实你们是有所不知:
+//悟空是在研究一个数学问题！
+//什么问题？他研究的问题是蟠桃一共有多少个！
+//不过,到最后,他还是没能解决这个难题,呵呵^-^
+//当时的情况是这样的:
+//第一天悟空吃掉桃子总数一半多一个,第二天又将剩下的桃子吃掉一半多一个
+//以后每天吃掉前一天剩下的一半多一个,到第n天准备吃的时候只剩下一个桃子。
+//聪明的你,请帮悟空算一下,他第一天开始吃的时候桃子一共有多少个呢？
+//Input
+//输入数据有多组,每组占一行,包含一个正整数n(1<n<30)
+//表示只剩下一个桃子的时候是在第n天发生的。
+//Output	
+//对于每组输入数据,输出第一天开始吃的时候桃子的总数,每个测试实例占一行。
+//Sample Input
+//2
+//4
+//Sample Output
+//4
+//22
+//Author
+//lcy
+//Source
+//C语言程序设计练习(二)
+//#include<stdio.h>
+//void tao(int num)
+//{
+//	int i = 0;
+//	int j = 0;
+//	int temp = 1;
+//	int sum = 1;
+//	for (i = 1;i < num;i++)
+//	{
+//		temp = 2 * (sum + 1);
+//		sum = temp;
+//	}
+//	printf("%d\n", sum);
+//}
+//int main()
+//{
+//	int num = 0;
+//	while (scanf("%d", &num) == 1)
+//	{
+//		tao(num);
+//	}
+//	return 0;
+//}
+
+
+//第2014题
+//Problem Description
+//青年歌手大奖赛中,评委会给参赛选手打分。
+//选手得分规则为去掉一个最高分和一个最低分,然后计算平均得分
+//请编程输出某选手的得分。
+//Input
+//输入数据有多组,每组占一行,每行的第一个数是n(2<n<=100)表示评委的人数
+//然后是n个评委的打分。
+//Output
+//对于每组输入数据,输出选手的得分,结果保留2位小数,每组输出占一行。
+//Sample Input
+//3 99 98 97
+//4 100 99 98 97
+//Sample Output
+//98.00
+//98.50
+//#include<stdio.h>
+//void score(int* arr, int count)
+//{
+//	arr[1] = 0;
+//	arr[count - 1] = 0;
+//	int i = 0;
+//	int sum = 0;
+//	for (i = 1;i < count;i++)
+//	{
+//		sum = sum + arr[i];
+//	}
+//	double average = (double)sum / (arr[0] - 2);
+//	printf("%.2f\n", average);
+//}
+//void sort(int* arr, int count)
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0;i < count - 1;i++)
+//	{
+//		for (j = 0;j < count - i - 1;j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int temp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = temp;
+//			}
+//		}
+//	}
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int count = 0;
+//	char c = 0;
+//	//读入成绩
+//	int arr[1000] = { 0 };
+//	while (scanf("%d%c", &num1, &c) == 2)
+//	{
+//		arr[count++] = num1;
+//		if (c == '\n')
+//		{
+//			sort(arr, count);
+//			score(arr, count);
+//			count = 0;
+//			continue;
+//		}
+//	}
+//	return 0;
+//}
+
+
+//第2015题
+//Problem Description
+//有一个长度为n(n<=100)的数列,该数列定义为从2开始的递增有序偶数
+//现在要求你按照顺序每m个数求出一个平均值,如果最后不足m个
+//则以实际数量求平均值。
+//编程输出该平均值序列。
+//Input
+//输入数据有多组,每组占一行,包含两个正整数n和m,n和m的含义如上所述。
+//Output
+//对于每组输入数据,输出一个平均值序列,每组输出占一行。
+//Sample Input
+//3 2
+//4 2
+//Sample Output
+//3 6
+//3 7
+//#include<stdio.h>
+//void AVE(int* arr, int num2,int count1,int temp)
+//{
+//	int i = 0;
+//	int sum = 0;
+//	for (i = count1;i < temp;i++)
+//	{
+//		sum = sum + arr[i];
+//	}
+//	printf("%d ",sum / num2);
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	int i = 2;
+//	int temp = 0;
+//	int arr[1000] = { 0 };
+//	int count = 0;
+//	while (scanf("%d %d", &num1, &num2) == 2)
+//	{
+//		int count1 = 0;
+//		temp = num2;
+//		for (i = 2;i <= 2 * num1;i += 2)
+//		{
+//			arr[count++] = i;
+//		}
+//		if (num1 % num2 == 0)
+//		{
+//			for (i = 0;i < num1 / num2;i++)
+//			{
+//				AVE(arr, num2, count1, temp);
+//				count1 += num2;
+//				temp = num2 + temp;
+//			}
+//		}
+//		else
+//		{
+//			for (i = 0;i < num1 / num2;i++)
+//			{
+//				AVE(arr, num2, count1,temp);
+//				count1 += num2;
+//				temp = num2 + temp;
+//			}
+//			printf("%d", arr[count - 1]);
+//		}
+//		count = 0;
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+//第2016题
+
+//第2017题
+//第2018题
+//第2019题
 //第2003题
 //第2003题
 //第2003题

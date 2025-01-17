@@ -539,6 +539,218 @@
 //}
 
 
+//#include<stdio.h>
+//int main()
+//{
+//	int x = 0;
+//	int n = 0;
+//	int max = -9999;
+//	int min = 9999;
+//	double sum = 0;
+//	while (scanf("%d", &x) == 1)
+//	{
+//		max = min = x;
+//		sum = sum + x;
+//		if (max < x)
+//		{
+//			max = x;
+//		}
+//		if (min > x)
+//		{
+//			min = x;
+//		}
+//		n++;
+//	}
+//	printf("%d %d %f\n", max, min, sum / n);
+//	return 0;
+//}
+
+
+//输入一些整数,求出它们的最小值、最大值和平均值(保留3位小数)。
+//输入保证这些数都是不超过1000的整数。
+//输入包含多组数据,每组数据第一行是整数个数n,第二行是n个整数。
+//n＝0为输入结束标记,程序应当忽略这组数据。
+//相邻两组数据之间应输出一个空行。
+//样例输入:
+//8
+//2 8 3 5 1 7 3 6
+//4
+//- 4 6 10 0
+//0
+//样例输出:
+//Case 1: 1 8 4.375
+//Case 2 : -4 10 3.000
+//#include<stdio.h>
+//#define INF 1000000000
+//int main()
+//{
+//	int x, n = 0, s = 0, kase = 0;
+//	while (scanf("%d", &n) == 1 && n)
+//	{
+//		int min = INF, max = -INF;
+//		s = 0;
+//		for (int i = 0; i < n; i++) 
+//		{
+//			scanf("%d", &x);
+//			s += x;
+//			if (x < min) min = x;
+//			if (x > max) max = x;
+//		}
+//		if (kase)
+//		{
+//			printf("\n");
+//		}
+//		printf("Case %d: %d %d %.3f\n", ++kase, min, max, (double)s / n);
+//	}
+//	return 0;
+//}
+
+
+//输出100～999中的所有水仙花数。
+//若3位数ABC满足ABC＝A3＋B3＋C3,则称其为水仙花数。
+//例如153＝13＋53＋33,所以153是水仙花数。
+//#include<stdio.h>
+//#include<math.h>
+//int narcissus(int num)
+//{
+//	if (num == pow(num / 100, 3) + pow(num % 10, 3) + pow(num / 10 % 10, 3))
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}
+//int main()
+//{
+//	int i = 0;
+//	for (i = 100;i <= 999;i++)
+//	{
+//		int ret = narcissus(i);
+//		if (ret == 1)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+
+
+//相传韩信才智过人,从不直接清点自己军队的人数
+//只要让士兵先后以三人一排、五人一排、七人一排地变换队形
+//而他每次只掠一眼队伍的排尾就知道总人数了。
+//输入包含多组数据,每组数据包含3个非负整数a,b,c
+//表示每种队形排尾的人数(a＜3,b＜5,c＜7)
+//输出总人数的最小值(或报告无解)。
+//已知总人数不小于10,不超过100。
+//输入到文件结束为止。
+//样例输入:
+//2 1 6
+//2 1 3
+//样例输出:
+//Case 1 : 41
+//Case 2 : No answer
+//#include<stdio.h>
+//int NUM(int num1, int num2, int num3)
+//{
+//	int i = 0;
+//	int flag = 1;
+//	for (i = 10;i <= 100;i++)
+//	{
+//		if (num1 == i % 3 && num2 == i % 5 && num3 == i % 7)
+//		{
+//			return i;
+//		}
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	int num3 = 0;
+//	int n = 1;
+//	while (scanf("%d %d %d", &num1, &num2, &num3) != EOF )
+//	{
+//		int ret = NUM(num1, num2, num3);
+//		if (ret == 1)
+//		{
+//			printf("Case %d : No answer\n", n);
+//			n++;
+//		}
+//		else
+//		{
+//			printf("Case %d : %d\n", n, ret);
+//			n++;
+//		}
+//	}
+//	return 0;
+//}
+
+
+//输入正整数n≤20，输出一个n层的倒三角形。
+//例如,n＝5时输出如下:
+//#########
+// #######
+//  #####
+//   ###
+//    #
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	int k = 0;
+//	int num = 0;
+//	int temp = 0;
+//	scanf("%d", &num);
+//	//5 9
+//	//4 7
+//	//3 5
+//	//2 3
+//	//1 1
+//	for (i = num;i > 0;i--)
+//	{
+//		for (k = 0;k < temp;k++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0;j < 2 * i - 1;j++)
+//		{
+//			printf("*");
+//		}
+//		temp++;
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+//输入两个正整数n＜m＜10^6,输出1/(n)^2+1/(n+1)^2+......+1/(m)^2
+//保留5位小数。
+//输入包含多组数据,结束标记为n＝m＝0。
+//提示：本题有陷阱。
+//#include<stdio.h>
+//#include<math.h>
+//int main()
+//{
+//	long long num1 = 0;
+//	long long num2 = 0;
+//	while (scanf("%lld %lld", &num1, &num2) == 2)
+//	{
+//		double sum = 0;
+//		long long i = 0;
+//		for (i = num1;i <= num2;i++)
+//		{
+//			sum = 1.0 / pow(i, 2) + sum;
+//		}
+//		printf("%.5f\n", sum);
+//	}
+//	return 0;
+//}
+
+
 //输入正整数a,b,c,输出a/b的小数形式,精确到小数点后c位。
 //a,b≤10^6,c≤100。
 //输入包含多组数据,结束标记为a＝b＝c＝0。
@@ -690,55 +902,6 @@
 //    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 //    permute(arr, 0, 8);
 //    return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
 //}
 
 
