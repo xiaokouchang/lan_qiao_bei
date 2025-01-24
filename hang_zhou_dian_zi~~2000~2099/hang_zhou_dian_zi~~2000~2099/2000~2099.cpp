@@ -909,10 +909,317 @@
 
 
 //第2016题
+//Problem Description
+//输入n(n<100)个数,找出其中最小的数,将它与最前面的数交换后输出这些数。
+//Input
+//输入数据有多组,每组占一行
+//每行的开始是一个整数n,表示这个测试实例的数值的个数,跟着就是n个整数。
+//n=0表示输入的结束,不做处理。
+//Output
+//对于每组输入数据，输出交换后的数列，每组输出占一行。
+//Sample Input
+//4 2 1 3 4
+//5 5 4 3 2 1
+//0
+//Sample Output
+//1 2 3 4
+//1 4 3 2 5
+//#include<stdio.h>
+//#define INF 1000000000
+////找出数组中的最小值
+//int MIN(int* arr, int count)
+//{
+//	int min = INF;
+//	int i = 0;
+//	int count1 = 0;
+//	for (i = 1; i < count; i++)
+//	{
+//		if (arr[i] < min)
+//		{
+//			count1 = i;
+//			min = arr[i];
+//		}
+//	}
+//	return count1;
+//}
+//void swap(int* arr, int count,int ret)
+//{
+//	int i = 0;
+//	int temp = arr[1];
+//	arr[1] = arr[ret];
+//	arr[ret] = temp;
+//	for (i = 1; i < count; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//int main()
+//{
+//	int arr[100] = { 0 };
+//	int count = 0;
+//	int num = 0;
+//	char c = 0;
+//	while (scanf("%d%c", &num, &c) == 2)
+//	{
+//		arr[count++] = num;
+//		if (arr[0] == 0 || c == '\n')
+//		{
+//			int ret = MIN(arr, count);
+//			swap(arr, count, ret);
+//			printf("\n");
+//			continue;
+//		}
+//	}
+//	return 0;
+//}
+
 
 //第2017题
+//Problem Description
+//对于给定的一个字符串,统计其中数字字符出现的次数。
+//Input
+//输入数据有多行,第一行是一个整数n,表示测试实例的个数
+//后面跟着n行,每行包括一个由字母和数字组成的字符串。
+//Output
+//对于每个测试实例,输出该串中数值的个数,每个输出占一行。
+//Sample Input
+//2
+//asdfasdf123123asdfasdf
+//asdf111111111asdfasdfasdf
+//Sample Output
+//6
+//9
+//#include<stdio.h>
+//void NUM(char* arr, int count)
+//{
+//	int i = 0;
+//	int j = 0;
+//	int count1 = 0;
+//	char arr1[10] = { '0','1','2','3','4','5','6','7','8','9' };
+//	for (i = 0;i < count;i++)
+//	{
+//		for (j = 0;j < 10;j++)
+//		{
+//			if (arr[i] == arr1[j])
+//			{
+//				count1++;
+//				break;
+//			}
+//		}
+//	}
+//	printf("%d\n", count1);
+//}
+//int main()
+//{
+//	int n = 0;
+//	char num = 0;
+//	char arr[100] = { 0 };
+//	int i = 0;
+//	char c = 0;
+//	scanf("%d", &n);
+//	int flag = 0;
+//	int count = 0;
+//	for (i = 0;i < n;i++)
+//	{
+//		while (scanf("%c%c", &num, &c) == 2)
+//		{
+//			if (num == '\n' && flag == 0)
+//			{
+//				flag = 1;
+//				arr[count++] = c;
+//				continue;
+//			}
+//			if (c == '\n')
+//			{
+//				arr[count++] = num;
+//				NUM(arr, count);
+//				count = 0;
+//				break;
+//			}
+//			else
+//			{
+//				arr[count++] = num;
+//				arr[count++] = c;
+//			}
+//		}
+//	}
+//	return 0;
+//}
+
+
 //第2018题
+
 //第2019题
+//Problem Description
+//有n(n<=100)个整数,已经按照从小到大顺序排列好
+//现在另外给一个整数x,请将该数插入到序列中,并使新的序列仍然有序。
+//Input
+//输入数据包含多个测试实例,每组数据由两行组成
+//第一行是n和m,第二行是已经有序的n个数的数列。
+//n和m同时为0标示输入数据的结束,本行不做处理。
+//Output
+//对于每个测试实例,输出插入新的元素后的数列。
+//Sample Input
+//3 3
+//1 2 4
+//0 0
+//Sample Output
+//1 2 3 4
+//#include<stdio.h>
+//void sort(int* arr, int num1)
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0;i < num1;i++)
+//	{
+//		for (j = 0;j < num1 - i - 1;j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int temp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = temp;
+//			}
+//		}
+//	}
+//	for (i = 0;i < num1;i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	int num = 0;
+//	int i = 0;
+//	char c = 0;
+//	int arr[100] = { 0 };
+//	while (scanf("%d %d", &num1, &num2) == 2)
+//	{
+//		if (num1 == 0 && num2 == 0)
+//		{
+//			break;
+//		}
+//		for (i = 0;i < num1;i++)
+//		{
+//			scanf("%d%c", &num, &c);
+//  			arr[i] = num;
+//		}
+//		arr[num1] = num2;
+//		sort(arr, num1 + 1);
+//	}
+//	return 0;
+//}
+
+
+//第2020题
+#include<stdio.h>
+void sort(int* arr1, int count)
+{
+	int i = 0;
+	int j = 0;
+	int arr2[100] = { 0 };
+	for (i = 1;i < count;i++)
+	{
+		if (arr1[i] < 0)
+		{
+			arr2[i] = -arr1[i];
+		}
+		else
+		{
+			arr2[i] = arr1[i];
+		}
+	}
+	for (i = 1;i < count;i++)
+	{
+		for (j = 1;j < count - i;j++)
+		{
+			if (arr1[j] > arr1[j + 1])
+			{
+				int temp = arr1[j];
+				arr1[j] = arr1[j + 1];
+				arr1[j + 1] = temp;
+			}
+		}
+	}
+	for (i = 1;i < count;i++)
+	{
+		printf("%d ", arr1[i]);
+	}
+	printf("\n");
+}
+int main()
+{
+	int num1 = 0;
+	int count = 0;
+	char c = 0;
+	int arr1[100] = { 0 };
+	while (scanf("%d%c", &num1, &c) == 2)
+	{
+		if (num1 == 0 && count == arr1[0])
+		{
+			break;
+		}
+		arr1[count++] = num1;
+		if (c == '\n')
+		{
+			sort(arr1,count);
+			count = 0;
+			continue;
+		}
+	}
+	return 0;
+}
+
+
+
+//#include<stdio.h>
+//void sort(int* arr, int count)
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0;i < count;i++)
+//	{
+//		for (j = 0;j < count - i - 1;j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int temp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = temp;
+//			}
+//		}
+//	}
+//	for (i = 0;i < count;i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int count = 0;
+//	char c = 0;
+//	int arr[100] = { 0 };
+//	while (scanf("%d%c", &num1, &c) == 2)
+//	{
+//		/*if (num1 == 0 && count == arr[0])
+//		{
+//			break;
+//		}*/
+//		arr[count++] = num1;
+//		if (c == '\n')
+//		{
+//			sort(arr, count);
+//			count = 0;
+//			continue;
+//		}
+//	}
+//	return 0;
+//}
 //第2003题
 //第2003题
 //第2003题
