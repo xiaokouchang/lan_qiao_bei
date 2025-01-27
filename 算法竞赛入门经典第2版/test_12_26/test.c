@@ -905,16 +905,155 @@
 //}
 
 
+//数字逆序输出
 //#include<stdio.h>
+//void print(int* arr, int count)
+//{
+//	int i = 0;
+//	int count1 = 0;
+//	int temp = 10;
+//	for (i = 0; i < count; i++)
+//	{
+//		temp = arr[i];
+//		while (temp > 0)
+//		{
+//			printf("%d ", temp % 10);
+//			temp = temp / 10;
+//		}
+//		printf("\n");
+//	}
+//}
 //int main()
 //{
+//	int arr[100] = { 0 };
+//	int num = 0;
+//	int count = 0;
+//	while (scanf("%d", &num) == 1)
+//	{
+//		arr[count++] = num;
+//		if (getchar() == '\n')
+//		{
+//			print(arr, count);
+//			count = 0;
+//		}
+//	}
 //	return 0;
 //}
 
 
 //#include<stdio.h>
+//#define maxn 105
+//int a[maxn];
 //int main()
 //{
+//	int x, n = 0;
+//	while (scanf("%d", &x) == 1)
+//	{
+//		a[n++] = x;
+//		for (int i = n - 1; i >= 1; i--)
+//		{
+//			printf("%d ", a[i]);
+//		}
+//		printf("%d\n", a[0]);
+//	}
+//	return 0;
+//}
+
+
+//开灯问题。有n盏灯,编号为1～n。
+//第1个人把所有灯打开,第2个人按下所有编号为2的倍数的开关(这些灯将被关掉)
+//第3个人按下所有编号为3的倍数的开关
+//(其中关掉的灯将被打开,开着的灯将被关闭)
+//依此类推。
+//一共有k个人,问最后有哪些灯开着？
+//输入n和k,输出开着的灯的编号。
+//k≤n≤1000。
+//样例输入:
+//7 3
+//样例输出:
+//1 5 6 7
+//方法一
+//#include<stdio.h>
+//void open(int* arr, int num,int num1)
+//{
+//	int i = 0;
+//	for (i = num - 1; i <= num1; i += num)
+//	{
+//		if (arr[i] == 1)
+//		{
+//			arr[i] = 0;
+//		}
+//		else
+//		{
+//			arr[i] = 1;
+//		}
+//	}
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	int i = 0;
+//	int j = 0;
+//	int arr[100] = { 0 };
+//	while (scanf("%d %d", &num1, &num2) == 2)
+//	{
+//		for (i = 0; i < num1; i++)
+//		{
+//			arr[i] = 1;
+//		}
+//		for (j = 2; j <= num2; j++)
+//		{
+//			open(arr, j , num1);
+//		}
+//		for (i = 0; i < num1; i++)
+//		{
+//			if (arr[i] == 1)
+//			{
+//				printf("%d ", i + 1);
+//			}
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//#include<string.h>
+//#define maxn 1010
+//int a[maxn];
+//int main()
+//{
+//	int n, k, first = 1;
+//	memset(a, 0, sizeof(a));
+//	scanf("%d %d", &n, &k);
+//	for (int i = 1; i <= k; i++)
+//	{
+//		for (int j = 1; j <= n; j++)
+//		{
+//			if (j % i == 0)
+//			{
+//				a[j] = !a[j];
+//			}
+//		}
+//	}
+//	for (int i = 1; i <= n; i++)
+//	{
+//		if (a[i]) 
+//		{ 
+//			if (first)
+//			{
+//				first = 0; 
+//			}
+//			else
+//			{
+//				printf(" ");
+//			}
+//			printf("%d", i);
+//		}
+//	}
+//	printf("\n");
 //	return 0;
 //}
 
