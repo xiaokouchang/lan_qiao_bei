@@ -1490,14 +1490,79 @@
 
 
 //第2024题
+//C语言合法标识符
+//Problem Description
+//输入一个字符串,判断其是否是C的合法标识符。
+//Input
+//输入数据包含多个测试实例,数据的第一行是一个整数n,表示测试实例的个数
+//然后是n行输入数据,每行是一个长度不超过50的字符串。
+//Output
+//对于每组输入数据,输出一行。如果输入数据是C的合法标识符,则输出"yes",否则,输出"no"。
+//Sample Input
+//3
+//12ajf
+//fi8x_a
+//ff  ai_2
+//Sample Output
+//no
+//yes
+//no
 //#include<stdio.h>
 //#define ROW 100
 //#define COL 100
-//void latter(char arr[ROW][COL], int num, int arr3[100])
+//int latter(char arr[ROW], char arr1[54], int arr2[10], int num)
 //{
 //	int i = 0;
-//	char arr1[52];
+//	int k = 0;
+//	int flag = 0;
+//	for (k = 0; k < 54; k++)
+//	{
+//		if (arr[0] == arr1[k])
+//		{
+//			flag = 1;
+//		}
+//	}
+//	if (flag == 0)
+//	{
+//		return 0;
+//	}
+//	for (i = 0; i < num; i++)
+//	{
+//		int flag = 1;
+//		for (k = 0; k < 10; k++)
+//		{
+//			int num1 = arr[i] - '0';
+//			if (num1 == arr2[k])
+//			{
+//				flag = 0;
+//				break;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			for (k = 0; k < 54; k++)
+//			{
+//				if (arr[i] == arr1[k])
+//				{
+//					flag = 0;
+//					break;
+//				}
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			return 0;
+//		}
+//	}
+//}
+//int main()
+//{
+//	char arr[ROW];
+//	int num = 0;
+//	scanf("%d", &num);
+//	char arr1[54];
 //	int arr2[10];
+//	int i = 0;
 //	for (i = 0; i < 26; i++)
 //	{
 //		arr1[i] = 'a' + i;
@@ -1506,74 +1571,15 @@
 //	{
 //		arr1[i + 26] = 'A' + i;
 //	}
-//	arr1[52] = '_';
+//	arr1[53] = '_';
 //	for (i = 0; i < 10; i++)
 //	{
 //		arr2[i] = i;
 //	}
-//	for (i = 0; i < num; i++)
-//	{
-//		int j = 0;
-//		int k = 0;
-//		int flag = 0;
-//		if (flag == 0)
-//		{
-//			for (k = 0; k < 10; k++)
-//			{
-//				int num1 = arr[i][0] - '0';
-//				if (num1 == arr2[k])
-//				{
-//					arr3[i] = 0;
-//					flag = 1;
-//					break;
-//				}
-//			}
-//		}
-//		else
-//		{
-//			flag = 1;
-//			while (arr[i][j++] != '\n' && flag == 0)
-//			{
-//				if (flag == 1)
-//				{
-//					for (k = 0; k < 10; k++)
-//					{
-//						int num1 = arr[i][j] - '0';
-//						if (num1 == arr2[k])
-//						{
-//							flag = 0;
-//							break;
-//						}
-//					}
-//				}
-//				if (flag == 1)
-//				{
-//					for (k = 0; k < 52; k++)
-//					{
-//						if (arr[i][j++] == arr1[k])
-//						{
-//							flag = 0;
-//							break;
-//						}
-//					}
-//				}
-//			}
-//		}
-//		if (flag == 0)
-//		{
-//			arr3[i] = 1;
-//		}
-//	}
-//}
-//int main()
-//{
-//	char arr[ROW][COL];
-//	int num = 0;
-//	scanf("%d", &num);
-//	int i = 0;
 //	char c = 0;
-//	int arr3[100];
 //	int flag = 0;
+//	int arr3[ROW];
+//	int count = 0;
 //	for (i = 0; i < num; i++)
 //	{
 //		int j = 0;
@@ -1582,7 +1588,7 @@
 //			getchar();
 //			flag = 1;
 //		}
-//		while (scanf("%c",&c) == 1)
+//		while (scanf("%c", &c) == 1)
 //		{
 //			if (c == '\n')
 //			{
@@ -1590,11 +1596,19 @@
 //			}
 //			else
 //			{
-//				arr[i][j++] = c;
+//				arr[j++] = c;
 //			}
 //		}
+//		int ret = latter(arr, arr1, arr2, j);
+//		if (ret == 0)
+//		{
+//			arr3[count++] = 0;
+//		}
+//		else
+//		{
+//			arr3[count++] = 1;
+//		}
 //	}
-//	latter(arr, num, arr3);
 //	for (i = 0; i < num; i++)
 //	{
 //		if (arr3[i] == 1)
@@ -1607,115 +1621,3 @@
 //		}
 //	}
 //}
-
-
-#include<stdio.h>
-#define ROW 100
-#define COL 100
-int latter(char arr[ROW], char arr1[52], int arr2[10], int num)
-{
-	int i = 0;
-	int k = 0;
-	for (k = 0; k < 10; k++)
-	{
-		int num1 = arr[0] - '0';
-		if (num1 == arr2[k])
-		{
-			return 0;
-			break;
-		}
-	}
-	int flag1 = 0;
-	for (i = 0; i < num; i++)
-	{
-		int flag = 1;
-		for (k = 0; k < 10; k++)
-		{
-			int num1 = arr[i] - '0';
-			if (num1 == arr2[k])
-			{
-				flag = 0;
-				break;
-			}
-		}
-		if (flag == 1)
-		{
-			for (k = 0; k < 53; k++)
-			{
-				if (arr[i] == arr1[k])
-				{
-					flag = 0;
-					break;
-				}
-			}
-		}
-		if (flag == 1)
-		{
-			return 0;
-		}
-	}
-}
-int main()
-{
-	char arr[ROW];
-	int num = 0;
-	scanf("%d", &num);
-	char arr1[54];
-	int arr2[10];
-	int i = 0;
-	for (i = 0; i < 26; i++)
-	{
-		arr1[i] = 'a' + i;
-	}
-	for (i = 0; i < 26; i++)
-	{
-		arr1[i + 26] = 'A' + i;
-	}
-	arr1[53] = '_';
-	for (i = 0; i < 10; i++)
-	{
-		arr2[i] = i;
-	}
-	char c = 0;
-	int flag = 0;
-	int arr3[ROW];
-	for (i = 0; i < num; i++)
-	{
-		if (flag == 0)
-		{
-			getchar();
-			flag = 1;
-		}
-		while (scanf("%c", &c) == 1)
-		{
-			if (c == '\n')
-			{
-				break;
-			}
-			else
-			{
-				arr[i++] = c;
-			}
-		}
-		int ret = latter(arr, arr1, arr2, i);
-		if (ret == 0)
-		{
-			arr3[i] = 0;
-		}
-		else
-		{
-			arr3[i] = 1;
-		}
-	}
-	for (i = 0; i < num; i++)
-	{
-		if (arr3[i] == 1)
-		{
-			printf("yes\n");
-		}
-		else
-		{
-			printf("no\n");
-		}
-	}
-}
