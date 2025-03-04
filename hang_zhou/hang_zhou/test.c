@@ -1621,3 +1621,97 @@
 //		}
 //	}
 //}
+
+
+//第2025题
+#include<stdio.h>
+#define ROW 100
+#define INF 9999999
+void sort(int arr2[ROW], int count)
+{
+	int i = 0;
+	for (i = 0; i < count - 1; i++)
+	{
+		int j = 0;
+		for (j = 0; j < count - 1 - i; j++)
+		{
+			if (arr2[j] < arr2[j + 1])
+			{
+				int temp = arr2[j];
+				arr2[j] = arr2[j + 1];
+				arr2[j + 1] = temp;
+			}
+		}
+	}
+}
+void MAX(char arr1[ROW], int count)
+{
+	int i = 0;
+	int max = -INF;
+	int arr2[ROW];
+	for (i = 0; i < count; i++)
+	{
+		arr2[i] = arr1[i] - '0';
+	}
+	sort(arr2, count);
+	int count1 = 1;
+	for (i = 1; i < count; i++)
+	{
+		if (arr2[0] == arr2[i])
+		{
+			count1++;
+		}
+	}
+	char c = arr2[0] + '0';
+	int temp = count1;
+	int j = 0;
+	while (count1 > 0)
+	{
+		if (c == arr1[j])
+		{
+			int temp1 = j + 1;
+			int temp2 = j + 1;
+			int temp3 = j + 1;
+			for (i = count + 4; i > count; i--)
+			{
+				arr1[i] = arr1[temp1];
+				temp1++;
+			}
+			arr1[temp2++] = '(';
+			arr1[temp2++] = 'm';
+			arr1[temp2++] = 'a';
+			arr1[temp2++] = 'x';
+			arr1[temp2++] = ')';
+			count1--;
+		}
+		else
+		{
+			j++;
+		}
+	}
+	for (i = 0; i < count + temp * 5; i++)
+	{
+		printf("%c", arr1[i]);
+		if (i == count + temp * 5 - 1)
+		{
+			printf("\n");
+		}
+	}
+}
+
+int main()
+{
+	char arr1[ROW] = { 0 };
+	char c = 0;
+	int count = 0;
+	while (scanf("%c", &c) == 1)
+	{
+		if (c == '\n')
+		{
+			MAX(arr1, count);
+			count = 0;
+		}
+		arr1[count++] = c;
+	}
+	return 0;
+}
