@@ -1624,94 +1624,250 @@
 
 
 //第2025题
+//#include<stdio.h>
+//#define ROW 100
+//void sort(int arr2[ROW], int count)
+//{
+//	int i = 0;
+//	for (i = 0; i < count - 1; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < count - 1 - i; j++)
+//		{
+//			if (arr2[j] < arr2[j + 1])
+//			{
+//				int temp = arr2[j];
+//				arr2[j] = arr2[j + 1];
+//				arr2[j + 1] = temp;
+//			}
+//		}
+//	}
+//}
+//void MAX(char arr1[ROW], int count)
+//{
+//	int i = 0;
+//	int arr2[ROW];
+//	for (i = 0; i < count; i++)
+//	{
+//		arr2[i] = arr1[i] - '0';
+//	}
+//	sort(arr2, count);
+//	int count1 = 1;
+//	for (i = 1; i < count; i++)
+//	{
+//		if (arr2[0] == arr2[i])
+//		{
+//			count1++;
+//		}
+//	}
+//	char c = arr2[0] + '0';
+//	int temp = count1;
+//	int j = 0;
+//	int temp2 = 0;
+//	int count3 = 0;
+//	while (count1 > 0)
+//	{
+//		if (c == arr1[temp2])
+//		{
+//			int temp3 = temp2 + 1;
+//			count3++;
+//			int temp1 = temp2 + 1;
+//			temp3 = temp3 + 5;
+//			for (i = temp3; i < temp3 + count - count3; i++)
+//			{
+//				arr1[i] = arr1[temp1];
+//				temp1++;
+//			}
+//			arr1[++temp2] = '(';
+//			arr1[++temp2] = 'm';
+//			arr1[++temp2] = 'a';
+//			arr1[++temp2] = 'x';
+//			arr1[++temp2] = ')';
+//			temp2++;
+//			count1--;
+//		}
+//	}
+//	for (i = 0; i < count + temp * 5; i++)
+//	{
+//		printf("%c", arr1[i]);
+//		if (i == count + temp * 5 - 1)
+//		{
+//			printf("\n");
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	char arr1[ROW] = { 0 };
+//	char c = 0;
+//	int count = 0;
+//	while (scanf("%c", &c) == 1)
+//	{
+//		if (c == '\n')
+//		{
+//			MAX(arr1, count);
+//			count = 0;
+//		}
+//		arr1[count++] = c;
+//	}
+//	return 0;
+//}
+
+
+//第2025题
+//查找最大元素
+//Problem Description
+//对于输入的每个字符串,查找其中的最大字母,在该字母后面插入字符串(max)。
+//Input
+//输入数据包括多个测试实例,每个实例由一行长度不超过100的字符串组成,字符串仅由大小写字母构成。
+//Output
+//对于每个测试实例输出一行字符串,输出的结果是插入字符串(max)后的结果
+//如果存在多个最大的字母,就在每一个最大字母后面都插入(max)。
+//Sample Input
+//abcdefgfedcba
+//xxxxx
+//Sample Output
+//abcdefg(max)fedcba
+//x(max)x(max)x(max)x(max)x(max)
+//#include <stdio.h>
+//#define ROW 100
+//
+//// 冒泡排序函数，将数组按降序排列
+//void sort(int arr2[], int count) 
+//{
+//    int i, j;
+//    for (i = 0; i < count - 1; i++) 
+//    {
+//        for (j = 0; j < count - 1 - i; j++) 
+//        {
+//            if (arr2[j] < arr2[j + 1]) 
+//            {
+//                int temp = arr2[j];
+//                arr2[j] = arr2[j + 1];
+//                arr2[j + 1] = temp;
+//            }
+//        }
+//    }
+//}
+//
+//// 处理输入字符串的函数
+//void MAX(char arr1[], int count) 
+//{
+//    int i, max_count = 0;
+//    int arr2[ROW];
+//    // 将字符数组转换为整数数组
+//    for (i = 0; i < count; i++) 
+//    {
+//        arr2[i] = arr1[i] - '0';
+//    }
+//
+//    // 对整数数组进行排序
+//    sort(arr2, count);
+//
+//    // 找出最大值并统计其出现的次数
+//    int max_num = arr2[0];
+//    for (i = 0; i < count; i++) 
+//    {
+//        if (arr2[i] == max_num) 
+//        {
+//            max_count++;
+//        }
+//    }
+//    int row = ROW + max_count * 5;
+//    char result[ROW];
+//    int index = 0;
+//
+//    // 遍历原字符数组，插入 (max) 标记
+//    for (i = 0; i < count; i++) 
+//    {
+//        result[index++] = arr1[i];
+//        if (arr1[i] - '0' == max_num) 
+//        {
+//            result[index++] = '(';
+//            result[index++] = 'm';
+//            result[index++] = 'a';
+//            result[index++] = 'x';
+//            result[index++] = ')';
+//        }
+//    }
+//    result[index] = '\0';
+//
+//    // 输出处理后的字符串
+//    printf("%s\n", result);
+//}
+//
+//int main() 
+//{
+//    char arr1[ROW] = { 0 };
+//    int count = 0;
+//    char c;
+//    //读取输入,直到文件结束
+//    while ((c = getchar()) != EOF) 
+//    {
+//        if (c == '\n') 
+//        {
+//            if (count > 0) 
+//            {
+//                MAX(arr1, count);
+//                count = 0;
+//            }
+//        }
+//        else 
+//        {
+//            arr1[count++] = c;
+//        }
+//    }
+//    // 处理最后一行输入（如果没有换行符）
+//    if (count > 0) 
+//    {
+//        MAX(arr1, count);
+//    }
+//    return 0;
+//}
+
+
 #include<stdio.h>
 #define ROW 100
-#define INF 9999999
-void sort(int arr2[ROW], int count)
+void big(char arr[ROW], int count,int count1)
 {
 	int i = 0;
-	for (i = 0; i < count - 1; i++)
+	int f = 0;
+	int flag = 0;
+	for (i = 0;i < count1;i++)
 	{
-		int j = 0;
-		for (j = 0; j < count - 1 - i; j++)
+		if (flag == 0)
 		{
-			if (arr2[j] < arr2[j + 1])
-			{
-				int temp = arr2[j];
-				arr2[j] = arr2[j + 1];
-				arr2[j + 1] = temp;
-			}
-		}
-	}
-}
-void MAX(char arr1[ROW], int count)
-{
-	int i = 0;
-	int max = -INF;
-	int arr2[ROW];
-	for (i = 0; i < count; i++)
-	{
-		arr2[i] = arr1[i] - '0';
-	}
-	sort(arr2, count);
-	int count1 = 1;
-	for (i = 1; i < count; i++)
-	{
-		if (arr2[0] == arr2[i])
-		{
-			count1++;
-		}
-	}
-	char c = arr2[0] + '0';
-	int temp = count1;
-	int j = 0;
-	while (count1 > 0)
-	{
-		if (c == arr1[j])
-		{
-			int temp1 = j + 1;
-			int temp2 = j + 1;
-			int temp3 = j + 1;
-			for (i = count + 4; i > count; i--)
-			{
-				arr1[i] = arr1[temp1];
-				temp1++;
-			}
-			arr1[temp2++] = '(';
-			arr1[temp2++] = 'm';
-			arr1[temp2++] = 'a';
-			arr1[temp2++] = 'x';
-			arr1[temp2++] = ')';
-			count1--;
+			arr[i] = arr[i] - 32;
+			flag == 1;
 		}
 		else
 		{
-			j++;
-		}
-	}
-	for (i = 0; i < count + temp * 5; i++)
-	{
-		printf("%c", arr1[i]);
-		if (i == count + temp * 5 - 1)
-		{
-			printf("\n");
+			int c = i + 1;
+			if (arr[c] == ' ')
+			{
+				f = i + 2;
+			}
 		}
 	}
 }
 
 int main()
 {
-	char arr1[ROW] = { 0 };
+	char arr[ROW];
 	char c = 0;
 	int count = 0;
+	int i = 0;
 	while (scanf("%c", &c) == 1)
 	{
+		if (c == ' ' || c == '\n')
+		{
+			count++;
+		}
 		if (c == '\n')
 		{
-			MAX(arr1, count);
-			count = 0;
+			big(arr, count, i);
 		}
-		arr1[count++] = c;
+		arr[i++] = c;
 	}
-	return 0;
 }
