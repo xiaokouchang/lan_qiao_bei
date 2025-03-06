@@ -1827,47 +1827,231 @@
 //}
 
 
+//第2026题
+//首字母变大写
+//Problem Description
+//输入一个英文句子,将每个单词的第一个字母改成大写字母。
+//Input
+//输入数据包含多个测试实例,每个测试实例是一个长度不超过100的英文句子,占一行。
+//Output
+//请输出按照要求改写后的英文句子。
+//Sample Input
+//i like acm
+//i want to get an accepted
+//Sample Output
+//I Like Acm
+//I Want To Get An Accepted
+//#include<stdio.h>
+//#define ROW 100
+//void big(char arr[ROW], int count,int count1)
+//{
+//	int i = 0;
+//	int f = 0;
+//	int flag = 0;
+//	for (i = 0;i < count1;i++)
+//	{
+//		if (flag == 0)
+//		{
+//			arr[i] = arr[i] - 32;
+//			flag = 1;
+//		}
+//		else
+//		{
+//			if (arr[i] == ' ')
+//			{
+//				flag = 0;
+//			}
+//		}
+//	}
+//	for (i = 0; i < count1; i++)
+//	{
+//		printf("%c", arr[i]);
+//		if (i == count1 - 1)
+//		{
+//			printf("\n");
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	char arr[ROW];
+//	char c = 0;
+//	int count = 0;
+//	int i = 0;
+//	while (scanf("%c", &c) == 1)
+//	{
+//		if (c == ' ' || c == '\n')
+//		{
+//			count++;
+//		}
+//		if (c == '\n')
+//		{
+//			big(arr, count, i);
+//			count = 0;
+//			i = 0;
+//			continue;
+//		}
+//		arr[i++] = c;
+//	}
+//}
+
+
+//第2027题
+//统计元音
+//Problem Description
+//统计每个元音字母在字符串中出现的次数。
+//Input
+//输入数据首先包括一个整数n,表示测试实例的个数,然后是n行长度不超过100的字符串
+//Output
+//对于每个测试实例输出5行,格式如下：
+//a:num1
+//e:num2
+//i:num3
+//o:num4
+//u:num5
+//多个测试实例之间由一个空行隔开。
+//请特别注意:最后一块输出后面没有空行
+//Sample Input
+//2
+//aeiou
+//my name is ignatius
+//Sample Output
+//a : 1
+//e : 1
+//i : 1
+//o : 1
+//u : 1
+//
+//a : 2
+//e : 1
+//i : 3
+//o : 0
+//u : 1
+//#include<stdio.h>
+//#define ROW 100
+//void times(char arr[ROW], int count)
+//{
+//	int a = 0;
+//	int e = 0;
+//	int i = 0;
+//	int o = 0;
+//	int u = 0;
+//	int j = 0;
+//	int count1 = 0;
+//	for (j = 0; j < count; j++)
+//	{
+//		if (arr[j] == 'a')
+//		{
+//			a++;
+//		}
+//		else if (arr[j] == 'e')
+//		{
+//			e++;
+//		}
+//		else if (arr[j] == 'i')
+//		{
+//			i++;
+//		}
+//		else if (arr[j] == 'o')
+//		{
+//			o++;
+//		}
+//		else if (arr[j] == 'u')
+//		{
+//			u++;
+//		}
+//		else
+//		{
+//			count1++;
+//		}
+//	}
+//	printf("a:%d\n", a);
+//	printf("e:%d\n", e);
+//	printf("i:%d\n", i);
+//	printf("o:%d\n", o);
+//	printf("u:%d\n", u);
+//	printf("\n");
+//}
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	char c = 0;
+//	char arr[ROW];
+//	int i = 0;
+//	int count = 0;
+//	while (getchar() != '\n');
+//	for (i = 0; i < num; i++)
+//	{
+//		while (scanf("%c", &c) == 1)
+//		{
+//			if (c == '\n')
+//			{
+//				times(arr, count);
+//				count = 0;
+//				continue;
+//			}
+//			arr[count++] = c;
+//		}
+//	}
+//}
+
+
 #include<stdio.h>
 #define ROW 100
-void big(char arr[ROW], int count,int count1)
+void gong(int arr[ROW], int count)
 {
-	int i = 0;
-	int f = 0;
+	int i = 1;
+	int num1 = 0;
+	int num2 = 0;
 	int flag = 0;
-	for (i = 0;i < count1;i++)
+	while (i + 1 <= count)
 	{
 		if (flag == 0)
 		{
-			arr[i] = arr[i] - 32;
-			flag == 1;
+			num1 = arr[i];
+			num2 = arr[i + 1];
+			flag = 1;
 		}
 		else
 		{
-			int c = i + 1;
-			if (arr[c] == ' ')
-			{
-				f = i + 2;
-			}
+			num1 = num2;
+			num2 = arr[i + 1];
+		}
+		if (num1 < num2)
+		{
+			int temp = num1;
+			num1 = num2;
+			num2 = temp;
+		}
+		int temp1 = num1 % num2;
+		while (temp1 != 0)
+		{
+			int temp1 = num1 % num2;
+			num1 = num2;
+			num2 = temp1;
 		}
 	}
+	int gcd = num2;
 }
+
 
 int main()
 {
-	char arr[ROW];
+	int arr[ROW];
+	int num = 0;
 	char c = 0;
 	int count = 0;
-	int i = 0;
-	while (scanf("%c", &c) == 1)
+	while (scanf("%d%c", &num, &c) == 1)
 	{
-		if (c == ' ' || c == '\n')
-		{
-			count++;
-		}
 		if (c == '\n')
 		{
-			big(arr, count, i);
+			gong(arr, count);
+			count = 0;
+			continue;
 		}
-		arr[i++] = c;
+		arr[count++] = num;
 	}
+	return 0;
 }
