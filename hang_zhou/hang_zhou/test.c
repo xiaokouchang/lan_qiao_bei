@@ -1998,60 +1998,185 @@
 //}
 
 
-#include<stdio.h>
-#define ROW 100
-void gong(int arr[ROW], int count)
-{
-	int i = 1;
-	int num1 = 0;
-	int num2 = 0;
-	int flag = 0;
-	while (i + 1 <= count)
-	{
-		if (flag == 0)
-		{
-			num1 = arr[i];
-			num2 = arr[i + 1];
-			flag = 1;
-		}
-		else
-		{
-			num1 = num2;
-			num2 = arr[i + 1];
-		}
-		if (num1 < num2)
-		{
-			int temp = num1;
-			num1 = num2;
-			num2 = temp;
-		}
-		int temp1 = num1 % num2;
-		while (temp1 != 0)
-		{
-			int temp1 = num1 % num2;
-			num1 = num2;
-			num2 = temp1;
-		}
-	}
-	int gcd = num2;
-}
+//第2028题
+//Lowest Common Multiple Plus
+//Problem Description
+//求n个数的最小公倍数。
+//Input
+//输入包含多个测试实例,每个测试实例的开始是一个正整数n,然后是n个正整数。
+//Output
+//为每组测试数据输出它们的最小公倍数,每个测试实例的输出占一行。
+//你可以假设最后的输出是一个32位的整数。
+//Sample Input
+//2 4 6
+//3 2 5 7
+//Sample Output
+//12
+//70
+//#include<stdio.h>
+//#define ROW 100
+//void gong(int arr[ROW], int count)
+//{
+//	int i = 1;
+//	int num1 = 0;
+//	int num2 = 0;
+//	int flag = 0;
+//	int temp = 0;
+//	int gcd = 0;
+//	while (i + 1 < count)
+//	{
+//		if (flag == 0)
+//		{
+//			num1 = arr[i];
+//			num2 = arr[i + 1];
+//			flag = 1;
+//		}
+//		else
+//		{
+//			num1 = num1;
+//			num2 = arr[i + 1];
+//		}
+//		if (num1 < num2)
+//		{
+//			temp = num1;
+//			num1 = num2;
+//			num2 = temp;
+//		}
+//		int temp1 = num1 % num2;
+//		while (temp1 != 0)
+//		{
+//			temp1 = num1 % num2;
+//			num1 = num2;
+//			num2 = temp1;
+//		}
+//		i++;
+//	}
+//	if (count % 2 == 0)
+//	{
+//		gcd = num2;
+//	}
+//	else
+//	{
+//		gcd = num1;
+//	}
+//	int cheng = 1;
+//	for (i = 1;i < count;i++)
+//	{
+//		cheng *= arr[i];
+//	}
+//	int gbs = cheng / gcd;
+//	printf("%d\n", gbs);
+//}
+//int main()
+//{
+//	int arr[ROW];
+//	int num = 0;
+//	char c = 0;
+//	int count = 0;
+//	while (scanf("%d%c", &num, &c) == 2)
+//	{
+//		arr[count++] = num;
+//		if (c == '\n')
+//		{
+//			gong(arr, count);
+//			count = 0;
+//			continue;
+//		}
+//	}
+//	return 0;
+//}
 
 
-int main()
-{
-	int arr[ROW];
-	int num = 0;
-	char c = 0;
-	int count = 0;
-	while (scanf("%d%c", &num, &c) == 1)
-	{
-		if (c == '\n')
-		{
-			gong(arr, count);
-			count = 0;
-			continue;
-		}
-		arr[count++] = num;
-	}
-	return 0;
-}
+//第2029题
+//Palindromes _easy version
+//Problem Description
+//"回文串"是一个正读和反读都一样的字符串, 比如"level"或者"noon"等等就是回文串。
+//请写一个程序判断读入的字符串是否是"回文"。
+//Input
+//输入包含多个测试实例,输入数据的第一行是一个正整数n
+//表示测试实例的个数,后面紧跟着是n个字符串。
+//Output
+//如果一个字符串是回文串,则输出"yes",否则输出"no"
+//Sample Input
+//4
+//level
+//abcde
+//noon
+//haha
+//Sample Output
+//yes
+//no
+//yes
+//no
+//#include<stdio.h>
+//#define ROW 100
+//int back(char arr1[ROW], int count)
+//{
+//	int flag = 0;
+//	int i = 0;
+//	int j = 0;
+//	if (count % 2 == 0)
+//	{
+//		j = count / 2;
+//	}
+//	else
+//	{
+//		j = count / 2 + 1;
+//	}
+//	int temp = count - 1;
+//	for (i = 0;i < j;i++)
+//	{
+//		if (arr1[i] != arr1[temp--])
+//		{
+//			flag = 1;
+//			break;
+//		}
+//	}
+//	if (flag == 1)
+//	{
+//		return 0;
+//	}
+//	else
+//	{
+//		return 1;
+//	}
+//}
+//
+//int main()
+//{
+//	char arr1[ROW];
+//	int arr2[ROW];
+//	int num = 0;
+//	int i = 0;
+//	char c = 0;
+//	int count = 0;
+//	int j = 0;
+//	scanf("%d", &num);
+//	while (getchar() != '\n');
+//	for (i = 0;i < num;i++)
+//	{
+//		while (scanf("%c", &c) == 1)
+//		{
+//			if (c == '\n')
+//			{
+//				int ret = back(arr1, count);
+//				arr2[j++] = ret;
+//				count = 0;
+//				break;
+//			}
+//			arr1[count++] = c;
+//		}
+//	}
+//	for (i = 0;i < j;i++)
+//	{
+//		if (arr2[i] == 0)
+//		{
+//			printf("no\n");
+//		}
+//		else
+//		{
+//			printf("yes\n");
+//		}
+//	}
+//	return 0;
+//}
