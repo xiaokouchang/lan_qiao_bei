@@ -2180,3 +2180,32 @@
 //	}
 //	return 0;
 //}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+    int n;
+    scanf("%d", &n);
+    getchar();  // 读取掉输入n后的换行符
+
+    while (n--) 
+    {
+        char s[10000];
+        fgets(s, sizeof(s), stdin);
+
+        int len = strlen(s);
+        int count = 0;
+        for (int i = 0; i < len; i++) {
+            if ((unsigned char)s[i] > 127) {  // 汉字的机内码每个字节都大于127
+                count++;
+            }
+        }
+
+        printf("%d\n", count / 2);  // 一个汉字占两个字节
+    }
+
+    return 0;
+}
