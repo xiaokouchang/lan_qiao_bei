@@ -2185,13 +2185,13 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() 
+int main()
 {
     int n;
     scanf("%d", &n);
     getchar();  // 读取掉输入n后的换行符
 
-    while (n--) 
+    while (n--)
     {
         char s[10000];
         fgets(s, sizeof(s), stdin);
