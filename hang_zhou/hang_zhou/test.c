@@ -2182,30 +2182,263 @@
 //}
 
 
-#include <stdio.h>
-#include <string.h>
+//第2030题
+//汉字统计
+//Problem Description
+//统计给定文本文件中汉字的个数。
+//Input
+//输入文件首先包含一个整数n,表示测试实例的个数,然后是n段文本。
+//Output
+//对于每一段文本,输出其中的汉字的个数,每个测试实例的输出占一行。
+//[Hint:]从汉字机内码的特点考虑~
+//Sample Input
+//2
+//WaHaHa!WaHaHa!今年过节不说话要说只说普通话WaHaHa!WaHaHa!
+//马上就要期末考试了Are you ready ?
+//Sample Output
+//14
+//9
+//#include <stdio.h>
+//#include <string.h>
+//int main() 
+//{
+//    int n;
+//    scanf("%d", &n);
+//    getchar();  // 读取掉输入n后的换行符
+//    while (n--) 
+//    {
+//        char s[10000];
+//        fgets(s, sizeof(s), stdin);
+//        int len = strlen(s);
+//        int count = 0;
+//        for (int i = 0; i < len; i++) 
+//        {
+//            if ((unsigned char)s[i] > 127) 
+//            {  // 汉字的机内码每个字节都大于127
+//                count++;
+//            }
+//        }
+//        printf("%d\n", count / 2);  // 一个汉字占两个字节
+//    }
+//    return 0;
+//}
 
-int main()
-{
-    int n;
-    scanf("%d", &n);
-    getchar();  // 读取掉输入n后的换行符
 
-    while (n--)
-    {
-        char s[10000];
-        fgets(s, sizeof(s), stdin);
+//第2031题
+//进制转换
+//Problem Description
+//输入一个十进制数N,将它转换成R进制数输出。
+//Input
+//输入数据包含多个测试实例,每个测试实例包含两个整数N(32位整数)和R(2<=R<=16)。
+//Output
+//为每个测试实例输出转换后的数,每个输出占一行。
+//如果R大于10,则对应的数字规则参考16进制(比如,10用A表示,等等)。
+//Sample Input
+//7 2
+//23 12
+//- 4 3
+//Sample Output
+//111
+//1B
+//-11
+//#include<stdio.h>
+//void change(int N, int R)
+//{
+//    char arr[100] = { 0 };
+//    if (N == 0)
+//    {
+//        printf("0\n");
+//        return 0;
+//    }
+//    if (N < 0)
+//    {
+//        printf("-");
+//        N = -N;
+//    }
+//    int count = 0;
+//    while (N > 0)
+//    {
+//        int temp = N % R;
+//        if (temp < 10)
+//        {
+//            arr[count++] = temp + '0';
+//        }
+//        else
+//        {
+//            arr[count++] = temp - 10 + 'A';
+//        }
+//        N = N / R;
+//    }
+//    int i = 0;
+//    for (i = count - 1;i >= 0;i--)
+//    {
+//        printf("%c", arr[i]);
+//    }
+//    printf("\n");
+//}
+//int main()
+//{
+//    int N = 0;
+//    int R = 0;
+//    while (scanf("%d %d", &N, &R) == 2)
+//    {
+//        change(N, R);
+//    }
+//    return 0;
+//}
 
-        int len = strlen(s);
-        int count = 0;
-        for (int i = 0; i < len; i++) {
-            if ((unsigned char)s[i] > 127) {  // 汉字的机内码每个字节都大于127
-                count++;
-            }
-        }
 
-        printf("%d\n", count / 2);  // 一个汉字占两个字节
-    }
+//第2032题
+//杨辉三角
+//Problem Description
+//还记得中学时候学过的杨辉三角吗?
+//具体的定义这里不再描述,你可以参考以下的图形：
+//1
+//1 1
+//1 2 1
+//1 3 3 1
+//1 4 6 4 1
+//1 5 10 10 5 1
+//Input
+//输入数据包含多个测试实例,每个测试实例的输入只包含一个正整数n(1<=n<=30)
+//表示将要输出的杨辉三角的层数。
+//Output
+//对应于每一个输入,请输出相应层数的杨辉三角
+//每一层的整数之间用一个空格隔开,每一个杨辉三角后面加一个空行。
+//Sample Input
+//2 3
+//Sample Output
+//1
+//1 1
+//
+//1
+//1 1
+//1 2 1
+//#include<stdio.h>
+//#define ROW 100
+//#define COL 100
+//void triangle(int num1)
+//{
+//	int i = 0;
+//	int j = 0;
+//	int arr[ROW][COL] = { 0 };
+//	for (i = 0;i < num1;i++)
+//	{
+//		for (j = 0;j <= i;j++)
+//		{
+//			if (j == 0 || j == i)
+//			{
+//				arr[i][j] = 1;
+//			}
+//			else
+//			{
+//				arr[i][j] = arr[i - 1][j] + arr[i - 1][j - 1];
+//			}
+//		}
+//	}
+//	for (i = 0;i < num1;i++)
+//	{
+//		for (j = 0;j <= i;j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	scanf("%d", &num1);
+//	triangle(num1);
+//	return 0;
+//}
 
-    return 0;
-}
+
+//第2033题
+//Problem Description
+//HDOJ上面已经有10来道A+B的题目了,相信这些题目曾经是大家的最爱
+//希望今天的这个A+B能给大家带来好运,也希望这个题目能唤起大家对ACM曾经的热爱。
+//这个题目的A和B不是简单的整数,而是两个时间,A和B都是由3个整数组成,分别表示时分秒
+//比如,假设A为34 45 56,就表示A所表示的时间是34小时45分钟56秒。
+//Input
+//输入数据有多行组成,首先是一个整数N,表示测试实例的个数
+//然后是N行数据,每行有6个整数AH,AM,AS,BH,BM,BS,分别表示时间A和B所对应的时分秒。
+//题目保证所有的数据合法。
+//Output
+//对于每个测试实例,输出A+B,每个输出结果也是由时分秒3部分组成
+//同时也要满足时间的规则(即:分和秒的取值范围在0~59)
+//每个输出占一行,并且所有的部分都可以用32位整数表示。
+//Sample Input
+//2
+//1 2 3 4 5 6
+//34 45 56 12 23 34
+//Sample Output
+//5 7 9
+//47 9 30
+//#include<stdio.h>
+//#define ROW 6
+//#define COL 6
+//void time(int arr[ROW][COL], int num, int col)
+//{
+//	int i = 0;
+//	int j = 0;
+//	int arr1[ROW][COL] = { 0 };
+//	int flag = 0;
+//	for (i = 0;i < num;i++)
+//	{
+//		for (j = 2;j >= 0;j--)
+//		{
+//			if (j > 0)
+//			{
+//				flag = 0;
+//			}
+//			int temp = arr[i][j] + arr[i][j + 3] + arr1[i][j];
+//			if (temp >= 60 && j > 0)
+//			{
+//				arr1[i][j] = temp - 60;
+//				if (flag == 0)
+//				{
+//					arr1[i][j - 1]++;
+//					flag = 1;
+//				}
+//			}
+//			else if(j == 0 && flag == 0)
+//			{
+//				arr1[i][j] = arr1[i][j] + temp;
+//			}
+//			else if (j == 0 && flag == 1)
+//			{
+//				arr1[i][j] = arr1[i][j] + temp - 1;
+//			}
+//			else
+//			{
+//				arr1[i][j] = temp;
+//			}
+//		}
+//	}
+//	for (i = 0;i < num;i++)
+//	{
+//		for (j = 0;j < 3;j++)
+//		{
+//			printf("%d ", arr1[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//int main()
+//{
+//	int num = 0;
+//	int arr[ROW][COL] = { 0 };
+//	scanf("%d", &num);
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0;i < num;i++)
+//	{
+//		for (j = 0;j < 6;j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	time(arr, num, COL);
+//	return 0;
+//}
