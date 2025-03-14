@@ -2442,3 +2442,221 @@
 //	time(arr, num, COL);
 //	return 0;
 //}
+
+
+//Problem Description
+//给定一个字符串,请你编写一个函数,返回该字符串的逆序字符串。
+//Input
+//输入数据包含多个测试实例,每个测试实例占一行,每行不超过100个字符。
+//Output
+//对于每个测试实例,请输出它的逆序字符串。
+//Sample Input
+//I love you
+//I love you
+//Sample Output
+//uoy evol I
+//uoy evol I
+//#include<stdio.h>
+//#define ROW 100
+//void back(char arr1[ROW], int count)
+//{
+//	int i = 0;
+//	int temp = count - 1;
+//	char arr2[ROW] = { 0 };
+//	for (i = 0;i < count;i++)
+//	{
+//		arr2[temp--] = arr1[i];
+//	}
+//	for (i = 0;i < count;i++)
+//	{
+//		printf("%c", arr2[i]);
+//	}
+//	printf("\n");
+//}
+//int main()
+//{
+//	int count = 0;
+//	char c = 0;
+//	char arr1[ROW] = { 0 };
+//	while (scanf("%c", &c) == 1)
+//	{
+//		if (c == '\n')
+//		{
+//			break;
+//		}
+//		arr1[count++] = c;
+//	}
+//	back(arr1, count);
+//	return 0;
+//}
+
+
+//第2034题
+//人见人爱A - B
+//Problem Description
+//参加过上个月月赛的同学一定还记得其中的一个最简单的题目,就是{A}+{B}
+//那个题目求的是两个集合的并集,今天我们这个A-B求的是两个集合的差,就是做集合的减法运算。
+//(当然,大家都知道集合的定义,就是同一个集合中不会有两个相同的元素,这里还是提醒大家一下）
+//呵呵,很简单吧？
+//Input
+//每组输入数据占1行,每行数据的开始是2个整数n(0<=n<=100)和m(0<=m<=100)
+//分别表示集合A和集合B的元素个数,然后紧跟着n+m个元素
+//前面n个元素属于集合A,其余的属于集合B
+//每个元素为不超出int范围的整数,元素之间有一个空格隔开
+//如果n=0并且m=0表示输入的结束,不做处理。
+//Output
+//针对每组数据输出一行数据,表示A-B的结果,如果结果为空集合,则输出"NULL"
+//否则从小到大输出结果,为了简化问题,每个元素后面跟一个空格
+//Sample Input
+//3 3 1 2 3 1 4 7
+//3 7 2 5 8 2 3 4 5 6 7 8
+//0 0
+//Sample Output
+//2 3
+//NULL
+//一维数组
+//#include<stdio.h>
+//#define ROW 100
+//void sub(int arr1[ROW], int arr2[ROW], int count1, int count2)
+//{
+//	int i = 0;
+//	int j = 0;
+//	int flag = 0;
+//	for (i = 0;i < count1;i++)
+//	{
+//		for (j = 0;j < count2;j++)
+//		{
+//			if (arr1[i] == arr2[j])
+//			{
+//				flag = 1;
+//				break;
+//			}
+//		}
+//		if (flag == 0)
+//		{
+//			printf("%d ", arr1[i]);
+//		}
+//		flag = 0;
+//	}
+//	if (flag == 0)
+//	{
+//		printf("NULL\n");
+//	}
+//}
+//int main()
+//{
+//	int arr1[ROW] = { 0 };
+//	int arr2[ROW] = { 0 };
+//	int count1 = 0;
+//	int count2 = 0;
+//	int i = 0;
+//	int j = 0;
+//	while (scanf("%d %d", &count1, &count2) == 2)
+//	{
+//		if (count1 == 0 && count2 == 0)
+//		{
+//			break;
+//		}
+//		for (i = 0;i < count1;i++)
+//		{
+//			scanf("%d", &arr1[i]);
+//		}
+//		for (j = 0;j < count2;j++)
+//		{
+//			scanf("%d", &arr2[j]);
+//		}
+//		sub(arr1, arr2, count1, count2);
+//	}
+//	return 0;
+//}
+//二维数组
+//#include<stdio.h>
+//#define ROW 100
+//#define COL 100
+//void stract(int arr2[ROW], int arr3[ROW], int arr4[ROW][COL], int m, int n, int h)
+//{
+//	int i = 0;
+//	int count = 1;
+//	int count1 = 0;
+//	for (i = 0;i < m;i++)
+//	{
+//		int j = 0;
+//		int flag = 0;
+//		for (j = 0;j < n;j++)
+//		{
+//			if (arr2[i] == arr3[j])
+//			{
+//				flag = 1;
+//				break;
+//			}
+//		}
+//		if (flag == 0)
+//		{
+//			arr4[h][count++] = arr2[i];
+//			count1++;
+//		}
+//	}
+//	arr4[h][0] = count1;
+//}
+//void split(int arr1[ROW][COL],int count1,int count2)
+//{
+//	int i = 0;
+//	int arr2[ROW] = { 0 };
+//	int arr3[ROW] = { 0 };
+//	int arr4[ROW][COL] = {0};
+//	int j = 0;
+//	for (i = 0;i < count1;i++)
+//	{
+//		int m = 0;
+//		int n = 0;
+//		for (j = 2;j < arr1[i][0] + 2;j++)
+//		{
+//			arr2[m++] = arr1[i][j];
+//		}
+//		for (j = 2 + arr1[i][0];j < 2 + arr1[i][0] + arr1[i][1];j++)
+//		{
+//			arr3[n++] = arr1[i][j];
+//		}
+//		stract(arr2, arr3, arr4, m, n, i);
+//	}
+//	for (i = 0;i < count1;i++)
+//	{
+//		if (arr4[i][0] == 0)
+//		{
+//			printf("NULL\n");
+//			continue;
+//		}
+//		for (j = 1;j < arr4[i][0] + 1;j++)
+//		{
+//			printf("%d ", arr4[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//int main()
+//{
+//	int arr1[ROW][COL];
+//	int count1 = 0;
+//	int count2 = 0;
+//	char c = 0;
+//	int num = 0;
+//	while (scanf("%d%c", &num, &c) == 2)
+//	{
+//		if (c == '\n' && arr1[count1][0] != 0)
+//		{
+//			arr1[count1][count2++] = num;
+//			count1++;
+//			count2 = 0;
+//			continue;
+//		}
+//		arr1[count1][count2++] = num;
+//		if (arr1[count1][0] == 0 && arr1[count1][1] == 0)
+//		{
+//			break;
+//		}
+//	}
+//	split(arr1, count1, count2);
+//	return 0;
+//}
+
+
