@@ -2660,3 +2660,80 @@
 //}
 
 
+//第2035题
+//人见人爱A^B
+//Problem Description
+//求A^B的最后三位数表示的整数。
+//说明:A^B的含义是"A的B次方"
+//Input
+//输入数据包含多个测试实例,每个实例占一行,由两个正整数A和B组成(1<=A,B<=10000)
+//如果A=0,B=0,则表示输入数据的结束,不做处理。
+//Output
+//对于每个测试实例,请输出A^B的最后三位表示的整数,每个输出占一行。
+//Sample Input
+//2 3
+//12 6
+//6789 10000
+//0 0
+//Sample Output
+//8
+//984
+//1
+//#include<stdio.h>
+//#include<math.h>
+//#define ROW 100
+//#define COL 100
+//void cheng(int arr1[ROW][COL],int count)
+//{
+//	int i = 0;
+//	int j = 0;
+//	int arr2[ROW] = { 0 };
+//	for (i = 0;i < count;i++)
+//	{
+//		arr2[i] = pow(arr1[i][0], arr1[i][1]);
+//	}
+//	//1234
+//	//
+//	for (i = 0;i < count;i++)
+//	{
+//		if (arr2[i] / 100 == 0)
+//		{
+//			printf("%d\n", arr2[i]);
+//			continue;
+//		}
+//		int temp = arr2[i] % 10 + arr2[i] / 10 % 10 * 10 + arr2[i] / 100 % 10 * 100;
+//		if (temp > 0)
+//		{
+//			printf("%d\n", temp);
+//		}
+//		else
+//		{
+//			printf("1\n");
+//		}
+//	}
+//}
+//int main()
+//{
+//	int arr1[ROW][COL];
+//	int i = 0;
+//	int j = 0;
+//	int num = 0;
+//	while (scanf("%d", &num) == 1)
+//	{
+//		arr1[i][j++] = num;
+//		if (arr1[i][0] == 0 && arr1[i][1] == 0)
+//		{
+//			break;
+//		}
+//		if (j == 2)
+//		{
+//			j = 0;
+//			i++;
+//			continue;
+//		}
+//	}
+//	cheng(arr1, i);
+//	return 0;
+//}
+
+
