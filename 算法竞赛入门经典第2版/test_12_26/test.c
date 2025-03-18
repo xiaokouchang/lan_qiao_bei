@@ -1110,88 +1110,75 @@
 //	int i = 0;
 //	while (left <= right && top <= bottom)
 //	{
-//		for (i = right;i > 0;i--)
+//		//从上向下填充右边界
+//		for (i = top;i <= bottom;i++)
 //		{
 //			arr[i][right] = num1++;
 //		}
 //		right--;
-//		for (i = bottom;i > 0;i--)
+//		//从右向左填充下边界
+//		for (i = right;i >= left;i--)
 //		{
 //			arr[bottom][i] = num1++;
 //		}
 //		bottom--;
-//		for (i = ;i > 0;i--)
+//		//从下向上填充左边界
+//		for (i = bottom;i >= top;i--)
 //		{
-//			arr[i][i] = num1++;
+//			arr[i][left] = num1++;
 //		}
-//		bottom--;
+//		left++;
+//		//从左向右填充上边界
+//		for (i = left;i <= right;i++)
+//		{
+//			arr[top][i] = num1++;
+//		}
+//		top++;
+//	}
+//	int j = 0;
+//	for (i = 0;i < num;i++)
+//	{
+//		for (j = 0;j < num;j++)
+//		{
+//			printf("%2d ", arr[i][j]);
+//		}
+//		printf("\n");
 //	}
 //}
 //int main()
 //{
 //	int num = 0;
-//	scannf("%d", &num);
+//	scanf("%d", &num);
 //	snake(num);
 //	return 0;
 //}
 
 
-//1   2  3 4
-//12 13 14 5
-//11 16 15 6
-//10  9  8 7
-#include<stdio.h>
-#define ROW 100
-#define COL 100
-void snake(int num)
-{
-	int num1 = 1;
-	int top = 0;
-	int bottom = num - 1;
-	int left = 0;
-	int right = num - 1;
-	int arr[ROW][COL] = { 0 };
-	int i = 0;
-	while (left <= right && top <= bottom)
-	{
-		for (i = left;i <= right;i++)
-		{
-			arr[left][i] = num1++;
-		}
-		top++;
-		for (i = top;i <= bottom;i++)
-		{
-			arr[i][right] = num1++;
-		}
-		right--;
-		for (i = right;i > 0;i--)
-		{
-			arr[bottom][i] = num1++;
-		}
-		bottom--;
-		for (i = right;i > 0;i--)
-		{
-			arr[i][left] = num1++;
-		}
-		left++;
-	}
-	int j = 0;
-	for (i = 0;i < num;i++)
-	{
-		for (j = 0;j < num;j++)
-		{
-			printf("%d ", arr[i][j]);
-		}
-		printf('\n');
-	}
-}
-int main()
-{
-	int num = 0;
-	scanf("%d", &num);
-	snake(num);
-	return 0;
-}
+//第二种方法
+//#include<stdio.h>
+//#include<string.h>
+//#define maxn 20
+//int a[maxn][maxn];
+//int main()
+//{
+//	int n, x, y, tot = 0;
+//	scanf("%d", &n);
+//	memset(a, 0, sizeof(a));
+//	tot = a[x = 0][y = n - 1] = 1;
+//	while (tot < n * n)
+//	{
+//		while (x + 1 < n && !a[x + 1][y]) a[++x][y] = ++tot;
+//		while (y - 1 >= 0 && !a[x][y - 1]) a[x][--y] = ++tot;
+//		while (x - 1 >= 0 && !a[x - 1][y]) a[--x][y] = ++tot;
+//		while (y + 1 < n && !a[x][y + 1]) a[x][++y] = ++tot;
+//	}
+//	for (x = 0; x < n; x++)
+//	{
+//		for (y = 0; y < n; y++) printf("%3d", a[x][y]);
+//		printf("\n");
+//	}
+//	return 0;
+//}
 
 
 //#include<stdio.h>
