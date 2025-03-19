@@ -2737,3 +2737,122 @@
 //}
 
 
+//第2036题
+//改革春风吹满地
+//Problem Description
+//"改革春风吹满地,
+//不会AC没关系;
+//实在不行回老家,
+//还有一亩三分地。
+//谢谢!(乐队奏乐)"
+//话说部分学生心态极好,每天就知道游戏,这次考试如此简单的题目,也是云里雾里
+//而且,还竟然来这么几句打油诗。
+//好呀,老师的责任就是帮你解决问题,既然想种田,那就分你一块。
+//这块田位于浙江省温州市苍南县灵溪镇林家铺子村,多边形形状的一块地,原本是linle的
+//现在就准备送给你了。不过,任何事情都没有那么简单
+//你必须首先告诉我这块地到底有多少面积,如果回答正确才能真正得到这块地。
+//发愁了吧?就是要让你知道,种地也是需要AC知识的!以后还是好好练吧...
+//Input
+//输入数据包含多个测试实例,每个测试实例占一行
+//每行的开始是一个整数n(3<=n<=100),它表示多边形的边数(当然也是顶点数)
+//然后是按照逆时针顺序给出的n个顶点的坐标(x1,y1,x2,y2...xn,yn)
+//为了简化问题,这里的所有坐标都用整数表示。
+//输入数据中所有的整数都在32位整数范围内,n=0表示数据的结束,不做处理。
+//Output
+//对于每个测试实例,请输出对应的多边形面积,结果精确到小数点后一位小数。
+//每个实例的输出占一行。
+//Sample Input
+//3 0 0 1 0 0 1
+//4 1 0 0 1 - 1 0 0 - 1
+//0
+//Sample Output
+//0.5
+//2.0
+//可以完成题目的条件,但不能准确求出n边形的面积
+//#include<stdio.h>
+//#include<math.h>
+//#define ROW 100
+//void square(int arr[ROW], int count1)
+//{
+//	int i = 0;
+//	float a = 0;
+//	float b = 0;
+//	float c = 0;
+//	int th = 0;
+//	int num = 1;
+//	if (arr[0] > 3)
+//	{
+//		num = arr[0] - 2;
+//	}
+//	a = sqrt(pow(arr[1] - arr[3], 2) + pow(arr[2] - arr[4], 2));
+//	b = sqrt(pow(arr[1] - arr[5], 2) + pow(arr[2] - arr[6], 2));
+//	c = sqrt(pow(arr[3] - arr[5], 2) + pow(arr[4] - arr[6], 2));
+//	float p = (a + b + c) / 2.0;
+//	//1.5*0.5*0.5*0.5
+//	double sq = sqrt(p * (p - a) * (p - b) * (p - c)) * num;
+//	printf("%.2f\n", sq);
+//}
+//int main()
+//{
+//	int arr[ROW] = { 0 };
+//	int count = 0;
+//	int num = 0;
+//	char c = 0;
+//	while (scanf("%d%c", &num, &c) == 2)
+//	{
+//		if (c == '\n')
+//		{
+//			arr[count++] = num;
+//			square(arr, count);
+//			count = 0;
+//			continue;
+//		}
+//		arr[count++] = num;
+//	}
+//	return 0;
+//}
+
+
+
+//求n边形的面积
+//#include<stdio.h>
+//#include<math.h>
+//#define ROW 100
+//double triangle(int x1, int y1, int x2, int y2, int x3, int y3)
+//{
+//	float a = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+//	float b = sqrt(pow(x1 - x3, 2) + pow(y1 - y3, 2));
+//	float c = sqrt(pow(x2 - x3, 2) + pow(y2 - y3, 2));
+//	float p = (a + b + c) / 2.0;
+//	double sq = sqrt(p * (p - a) * (p - b) * (p - c));
+//}
+//void square(int arr[ROW], int count)
+//{
+//	int i = 0;
+//	double area = 0;
+//	for (i = 1;i < count - 2;i+=2)
+//	{
+//		area += triangle(arr[i], arr[i + 1], arr[i + 2], arr[i + 3], arr[i + 4], arr[i + 5]);
+//	}
+//	printf("%.2f\n", area);
+//}
+//int main()
+//{
+//	int arr[ROW] = { 0 };
+//	int count = 0;
+//	int num = 0;
+//	char c = 0;
+//	while (scanf("%d%c", &num, &c) == 2)
+//	{
+//		arr[count++] = num;
+//		if (c == '\n')
+//		{
+//			square(arr, count);
+//			count = 0;
+//			continue;
+//		}
+//	}
+//	return 0;
+//}
+
+
