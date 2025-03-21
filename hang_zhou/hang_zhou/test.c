@@ -2856,7 +2856,7 @@
 //}
 
 
-//第2036题
+//第2037题
 //今年暑假不AC
 //Problem Description
 //"今年暑假不AC?"
@@ -2893,57 +2893,66 @@
 //0
 //Sample Output
 //5
+
+
+//第2038题
+//三角形
+//Problem Description
+//给定三条边,请你判断一下能不能组成一个三角形。
+//Input
+//输入数据第一行包含一个数M,接下有M行,每行一个实例,包含三个正数A,B,C。其中A,B,C<1000;
+//Output
+//对于每个测试实例,如果三条边长A,B,C能组成三角形的话,输出YES,否则NO。
+//Sample Input
+//2
+//1 2 3
+//2 2 2
+//Sample Output
+//NO
+//YES
 //#include<stdio.h>
 //#define ROW 100
 //#define COL 100
-//void sort(int arr[ROW][COL], int num)
+//void triangle(int arr1[ROW][COL], int num)
 //{
-//	int i = 0;
-//	for (i = 0; i < num - 1; i++)
-//	{
-//		int j = 0;
-//		while (arr[j][0] > arr[j + 1][0])
-//		{
-//			int temp = arr[j][0];
-//			arr[j][0] = arr[j + 1][0];
-//			arr[j + 1][0] = temp;
-//			temp = arr[j][1];
-//			arr[j][1] = arr[j + 1][1];
-//			arr[j + 1][1] = temp;
-//			if (j < num - 2)
-//			{
-//				j++;
-//			}
-//			else
-//			{
-//				break;
-//			}
-//		}
-//	}
-//}
-//void time(int arr[ROW][COL], int num)
-//{
-//	int count = 0;
 //	int i = 0;
 //	int j = 0;
-//	int time = 0;
-//	while (arr[i][0] != 0 && arr[i][1] != 0)
+//	int arr2[ROW] = { 0 };
+//	for (i = 0;i < num;i++)
 //	{
-//		
+//		if (arr1[i][0] + arr1[i][1] > arr1[i][2] && arr1[i][0] + arr1[i][2] > arr1[i][1] && arr1[i][1] + arr1[i][2] > arr1[i][0])
+//		{
+//			arr2[i] = 1;
+//		}
 //	}
-//
+//	for (i = 0;i < num;i++)
+//	{
+//		if (arr2[i] == 1)
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
 //}
 //int main()
 //{
 //	int num = 0;
 //	scanf("%d", &num);
-//	int arr[ROW][COL] = { 0 };
 //	int i = 0;
-//	for (i = 0; i < num; i++)
+//	int arr1[ROW][COL] = { 0 };
+//	for (i = 0;i < num;i++)
 //	{
-//		scanf("%d %d", &arr[i][0], &arr[i][1]);
+//		int j = 0;
+//		for (j = 0;j < 3;j++)
+//		{
+//			scanf("%d", &arr1[i][j]);
+//		}
 //	}
-//	sort(arr, num);
-//	time(arr, num);
+//	triangle(arr1, num);
 //	return 0;
 //}
+
+
