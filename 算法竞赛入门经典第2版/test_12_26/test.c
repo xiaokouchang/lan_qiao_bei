@@ -1181,375 +1181,113 @@
 //}
 
 
+//竖式问题。
+//找出所有形如abc*de(三位数乘以两位数)的算式
+//使得在完整的竖式中,所有数字都属于一个特定的数字集合。
+//输入数字集合(相邻数字之间没有空格),输出所有竖式。
+//每个竖式前应有编号,之后应有一个空行。
+//最后输出解的总数。
+//具体格式见样例输出
+//(为了便于观察,竖式中的空格改用小数点显示,但所写程序中应该输出空格,而非小数点)
+//样例输入:
+//2357
+//样例输出:
+//<1>
+//..775
+//X..33
+//-----
+//.2325
+//2325.
+//-----
+//25575
+//The number of solutions = 1
 //#include<stdio.h>
+//#include<string.h>
 //int main()
 //{
+//	int count = 0;
+//	char s[20], buf[99];
+//	scanf("%s", s);
+//	for (int abc = 775; abc <= 999; abc++)
+//	{
+//		for (int de = 33; de <= 99; de++)
+//		{
+//			int x = abc * (de % 10);
+//			int y = abc * (de / 10);
+//			int z = abc * de;
+//			sprintf(buf, "%d%d%d%d%d", abc, de, x, y, z);
+//			int ok = 1;
+//			int a = strlen(buf);
+//			for (int i = 0; i < a; i++)
+//			{
+//				if (strchr(s, buf[i]) == NULL)
+//				{
+//					ok = 0;
+//				}
+//			}
+//			if (ok)
+//			{
+//				printf("<%d>\n", ++count);
+//				printf("%5d\nX%4d\n-----\n%5d\n%4d\n-----\n%5d\n\n", abc, de, x, y, z);
+//			}
+//		}
+//	}
+//	printf("The number of solutions = %d\n", count);
 //	return 0;
 //}
 
 
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
-//	return 0;
-//}
-
-
-
+#include<stdio.h>
+#include<string.h>
+#define ROW 100
+int main()
+{
+	char arr1[ROW] = { 0 };
+	char arr2[2] = { '"','\0' };
+	int arr3[ROW];
+	char c = 0;
+	int count2 = 0;
+	while (scanf("%c", &c) == 1)
+	{
+		if (c == '\n')
+		{
+			break;
+		}
+		arr1[count2++] = c;
+	}
+	int i = 0;
+	int flag = 0;
+	int count1 = 0;
+	for (i = 0; i < strlen(arr1); i++)
+	{
+		if (strchr(arr2, arr1[i]) != NULL)
+		{
+			arr3[count1++] = i;
+			flag = 1;
+		}
+	}
+	if (flag == 1)
+	{
+		int flag1 = 0;
+		for (i = 0; i < count1; i++)
+		{
+			int temp = arr3[i];
+			if (flag1 == 0)
+			{
+				arr1[temp] = '`';
+				arr1[temp] = '`';
+				flag1 = 1;
+			}
+			else
+			{
+				flag1 = 0;
+			}
+		}
+	}
+	for (i = 0; i < count2; i++)
+	{
+		printf("%c", arr1[i]);
+	}
+	printf("\n");
+	return 0;
+}
