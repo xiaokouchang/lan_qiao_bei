@@ -3035,3 +3035,170 @@
 //	NUM(arr1, num);
 //	return 0;
 //}
+
+
+//第2041题
+//超级楼梯
+//Problem Description
+//有一楼梯共M级,刚开始时你在第一级,若每次只能跨上一级或二级,要走上第M级,共有多少种走法？
+//Input
+//输入数据首先包含一个整数N,表示测试实例的个数,然后是N行数据,
+//每行包含一个整数M(1<=M<=40),表示楼梯的级数。
+//Output
+//对于每个测试实例,请输出不同走法的数量
+//Sample Input
+//2
+//2
+//3
+//Sample Output
+//1
+//2
+//方法1
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<time.h>
+//#define ROW 100
+//#define COL 2
+//int climb(int num)
+//{
+//	int count = 0;
+//	int count3 = 0;
+//	int row = 0;
+//	int arr1[ROW][COL] = { 0 };
+//	while (count3 <= num)
+//	{
+//		int count1 = 0;
+//		int count2 = 0;
+//		int sum = 1;
+//		while (sum != num)
+//		{
+//			int r = rand() % 2 + 1;
+//			if (r == 2 && sum + 2 <= num)
+//			{
+//				sum += 2;
+//				count2++;
+//			}
+//			else
+//			{
+//				sum += 1;
+//				count1++;
+//			}
+//		}
+//		int i = 0;
+//		for (i = 0; i < 2; i++)
+//		{
+//			if (i == 0)
+//			{
+//				arr1[row][i] = count1;
+//			}
+//			else
+//			{
+//				arr1[row][i] = count2;
+//			}
+//		}
+//		count++;
+//		row++;
+//		int j = 0;
+//		if (count > 1)
+//		{
+//			for (i = 0; i < row; i++)
+//			{
+//				int temp = arr1[i][0];
+//				for (j = 0; j < row; j++)
+//				{
+//					if (i == j)
+//					{
+//						continue;
+//					}
+//					if (temp == arr1[j][0])
+//					{
+//						if (arr1[i][1] == arr1[j][1])
+//						{
+//							arr1[j][0] = 0;
+//							arr1[j][1] = 0;
+//							row--;
+//							count--;
+//							count3++;
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}
+//	return count;
+//}
+//void test(int arr1[ROW], int num)
+//{
+//	int i = 0;
+//	int arr2[ROW] = { 0 };
+//	for (i = 0; i < num; i++)
+//	{
+//		int ret = climb(arr1[i]);
+//		arr2[i] = ret;
+//	}
+//	for (i = 0; i < num; i++)
+//	{
+//		printf("%d\n", arr2[i]);
+//	}
+//}
+//int main()
+//{
+//	int num = 0;
+//	srand((unsigned int)time(NULL));
+//	scanf("%d", &num);
+//	int i = 0;
+//	int arr1[ROW] = { 0 };
+//	for (i = 0; i < num; i++)
+//	{
+//		scanf("%d", &arr1[i]);
+//	}
+//	test(arr1, num);
+//	return 0;
+//}
+
+
+//方法2
+//#include <stdio.h>
+////动态规划求解爬楼梯问题(初始在第一阶)
+//int climb(int num) 
+//{
+//    if (num == 2)
+//    {
+//        return 1;
+//    }
+//    if (num == 3)
+//    {
+//        return 2;
+//    }
+//    int dp[100];
+//    dp[2] = 1;
+//    dp[3] = 2;
+//    for (int i = 4; i <= num; i++)
+//    {
+//        dp[i] = dp[i - 1] + dp[i - 2];
+//    }
+//    return dp[num];
+//}
+////测试函数
+//void test(int arr1[], int num) 
+//{
+//    for (int i = 0; i < num; i++)
+//    {
+//        int ret = climb(arr1[i]);
+//        printf("%d\n", ret);
+//    }
+//}
+//int main()
+//{
+//    int num;
+//    scanf("%d", &num);
+//    int arr1[100];
+//    for (int i = 0; i < num; i++)
+//    {
+//        scanf("%d", &arr1[i]);
+//    }
+//    test(arr1, num);
+//    return 0;
+//}
+
+
