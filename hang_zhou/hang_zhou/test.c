@@ -3279,3 +3279,153 @@
 //	sheep(arr1, num);
 //	return 0;
 //}
+
+
+//第2043题
+//密码
+//Problem Description
+//网上流传一句话:"常在网上飘啊,哪能不挨刀啊～"。
+//其实要想能安安心心地上网其实也不难,学点安全知识就可以。
+//首先,我们就要设置一个安全的密码。
+//那什么样的密码才叫安全的呢?
+//一般来说一个比较安全的密码至少应该满足下面两个条件:
+//(1).密码长度大于等于8，且不要超过16。
+//(2).密码中的字符应该来自下面"字符类别"中四组中的至少三组。
+//这四个字符类别分别为:
+//1.大写字母:A,B,C...Z;
+//2.小写字母:a,b,c...z;
+//3.数字:0,1,2...9;
+//4.特殊符号:~,!,@,#,$,%,^;
+//给你一个密码,你的任务就是判断它是不是一个安全的密码。
+//Input
+//输入数据第一行包含一个数M,接下有M行,每行一个密码(长度最大可能为50)
+//密码仅包括上面的四类字符。
+//Output
+//对于每个测试实例,判断这个密码是不是一个安全的密码,是的话输出YES,否则输出NO。
+//Sample Input
+//3
+//a1b2c3d4
+//Linle@ACM
+//^~^@^@!%
+//Sample Output
+//NO
+//YES
+//NO
+//#include<stdio.h>
+//#include<string.h>
+//#define ROW 100
+//#define COL 100
+//int safe(char arr1[ROW][COL], int row, int col)
+//{
+//	int i = 0;
+//	int j = 0;
+//	char arr2[ROW][COL] = { 0 };
+//	char arr3[8] = { '~','!','@','#','$','%','^' };
+//	int arr4[10] = { 0 };
+//	int flag1 = 0;
+//	int flag2 = 0;
+//	int flag3 = 0;
+//	int flag4 = 0;
+//	int count = 0;
+//	for (j = 0; j < 26; j++)
+//	{
+//		arr2[0][j] = 'a' + j;
+//	}
+//	for (j = 0; j < 26; j++)
+//	{
+//		arr2[1][j] = 'A' + j;
+//	}
+//	for (j = 0; j < 26; j++)
+//	{
+//		if (strchr(arr1[row], arr2[0][j]))
+//		{
+//			flag1 = 1;
+//			break;
+//		}
+//	}
+//	for (j = 0; j < 26; j++)
+//	{
+//		if (strchr(arr1[row], arr2[1][j]))
+//		{
+//			flag2 = 1;
+//			break;
+//		}
+//	}
+//	for (j = 0; j <= 9; j++)
+//	{
+//		if (strchr(arr1[row], '0' + j))
+//		{
+//			flag3 = 1;
+//			break;
+//		}
+//	}
+//	for (j = 0; j < 7; j++)
+//	{
+//		if (strchr(arr1[row], arr3[j]))
+//		{
+//			flag4 = 1;
+//			break;
+//		}
+//	}
+//	if (flag1 && flag2 && flag3)
+//	{
+//		count = 3;
+//	}
+//	if (flag1 && flag3 && flag4)
+//	{
+//		count = 3;
+//	}
+//	if (flag2 && flag3 && flag4)
+//	{
+//		count = 3;
+//	}
+//	if (flag1 && flag2 && flag4)
+//	{
+//		count = 3;
+//	}
+//	if (flag1 && flag2 && flag3 && flag4)
+//	{
+//		count = 4;
+//	}
+//	if (count >= 3 && (col - 1 >= 8 && col - 1 <= 16))
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	char arr1[ROW][COL] = { 0 };
+//	char arr2[ROW] = { 0 };
+//	int i = 0;
+//	char c = 0;
+//	int row = 0;
+//	int col = 0;
+//	int count = 0;
+//	while (getchar() != '\n');
+//	for (i = 0; i < num; i++)
+//	{
+//		scanf("%s", arr1[row]);
+//		col = strlen(arr1[row]);
+//		int ret = safe(arr1, row, col);
+//		arr2[count++] = ret;
+//		row++;
+//	}
+//	for (i = 0; i < row; i++)
+//	{
+//		if (arr2[i] == 1)
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
