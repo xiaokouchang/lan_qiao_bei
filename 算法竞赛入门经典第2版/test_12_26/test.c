@@ -1237,57 +1237,85 @@
 //}
 
 
-#include<stdio.h>
-#include<string.h>
-#define ROW 100
-int main()
-{
-	char arr1[ROW] = { 0 };
-	char arr2[2] = { '"','\0' };
-	int arr3[ROW];
-	char c = 0;
-	int count2 = 0;
-	while (scanf("%c", &c) == 1)
-	{
-		if (c == '\n')
-		{
-			break;
-		}
-		arr1[count2++] = c;
-	}
-	int i = 0;
-	int flag = 0;
-	int count1 = 0;
-	for (i = 0; i < strlen(arr1); i++)
-	{
-		if (strchr(arr2, arr1[i]) != NULL)
-		{
-			arr3[count1++] = i;
-			flag = 1;
-		}
-	}
-	if (flag == 1)
-	{
-		int flag1 = 0;
-		for (i = 0; i < count1; i++)
-		{
-			int temp = arr3[i];
-			if (flag1 == 0)
-			{
-				arr1[temp] = '`';
-				arr1[temp] = '`';
-				flag1 = 1;
-			}
-			else
-			{
-				flag1 = 0;
-			}
-		}
-	}
-	for (i = 0; i < count2; i++)
-	{
-		printf("%c", arr1[i]);
-	}
-	printf("\n");
-	return 0;
-}
+//#include<stdio.h>
+//#include<string.h>
+//#define ROW 100
+//int main()
+//{
+//	char arr1[ROW] = { 0 };
+//	char arr2[2] = { '"','\0' };
+//	int arr3[ROW];
+//	char c = 0;
+//	int count2 = 0;
+//	while (scanf("%c", &c) == 1)
+//	{
+//		if (c == '\n')
+//		{
+//			break;
+//		}
+//		arr1[count2++] = c;
+//	}
+//	int i = 0;
+//	int flag = 0;
+//	int count1 = 0;
+//	for (i = 0; i < strlen(arr1); i++)
+//	{
+//		if (strchr(arr2, arr1[i]) != NULL)
+//		{
+//			arr3[count1++] = i;
+//			flag = 1;
+//		}
+//	}
+//	if (flag == 1)
+//	{
+//		int flag1 = 0;
+//		for (i = 0; i < count1; i++)
+//		{
+//			int temp = arr3[i];
+//			if (flag1 == 0)
+//			{
+//				arr1[temp] = '`';
+//				arr1[temp] = '`';
+//				flag1 = 1;
+//			}
+//			else
+//			{
+//				flag1 = 0;
+//			}
+//		}
+//	}
+//	for (i = 0; i < count2; i++)
+//	{
+//		printf("%c", arr1[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
+
+
+//TeX中的引号(Tex Quotes,UVa 272)(1)
+//在TeX中,左双引号是"``",右双引号是"''"。
+//输入一篇包含双引号的文章,你的任务是把它转换成TeX的格式。
+//样例输入:
+//"To be or not to be,"quoth the Bard,"that is the question".
+//样例输出:
+//``To be or not to be,''quoth the Bard,``that is the question''.
+//#include<stdio.h>
+//int main()
+//{
+//	char c = 0;
+//	int flag = 1;
+//	while ((c = getchar()) != EOF)
+//	{
+//		if (c == '"')
+//		{
+//			printf("%s", flag ? "``" : "''");
+//			flag = !flag;
+//		}
+//		else
+//		{
+//			printf("%c", c);
+//		}
+//	}
+//	return 0;
+//}
